@@ -1,0 +1,22 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	cursor: default
+}
+html, body, p, h2, div {
+	text-align: center;
+	margin: 0;
+	padding: 0
+}
+body {
+	background: #808A87;
+	text-align: center;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	margin: 0 auto
+}
+html {
+	font: 12px "Segoe UI", "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif
+}
