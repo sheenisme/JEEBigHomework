@@ -1,6 +1,9 @@
 package jee.com.core.dao;
 
 import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
 import jee.com.core.po.User;
 
 public interface UserDAO {
@@ -10,7 +13,7 @@ public interface UserDAO {
 	 * @return Custom对象列表
 	 * @throws Exception
 	 */
-	public List<User> findByName(String name)throws Exception;
+	public List<User> findByName(@Param("loginname") String loginnname)throws Exception;
 	/**
 	 * 根据邮箱查询指定管理员对象
 	 * @param email 要查询的邮箱

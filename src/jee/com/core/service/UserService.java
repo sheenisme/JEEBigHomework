@@ -1,8 +1,8 @@
 package jee.com.core.service;
 
+import java.util.List;
 import jee.com.core.po.User;
 
 public interface UserService{
-	public User findUserById(Integer id);
-
+	public List<User> findUserByName(String name);
 }

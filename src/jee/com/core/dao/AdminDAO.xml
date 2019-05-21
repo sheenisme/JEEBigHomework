@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="jee.com.core.dao.UserDAO" >
-    <!-- 查询用户 -->
-    <select id="findByName" parameterType="String" resultType="User">
+<mapper namespace="jee.com.core.dao.AdminDAO" >
+    <!-- 查询管理员 -->
+    <select id="findByName" parameterType="String" resultType="Admin">
 	    select *
-	    from user
+	    from admins
 	    where loginname = #{loginname}
     </select>
 </mapper>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="./css/bootstrap.min.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css" />
 
 <title>主页</title>
 <style>
@@ -66,11 +66,12 @@ body{
 			<li class="active"><a href="">主页</a></li>
 			<li ><a href="http://www.sheensong.top/wordpress">论坛</a></li>
 			<li ><a href="Feedback.jsp">反馈</a></li>
+			<%@ page import="java.sql.*,java.util.*,jee.com.core.po.*" %>
 			<%
-				String name=(String)request.getSession().getAttribute("CustomSession"); 
+				User u=(User)request.getSession().getAttribute("USER_SESSION"); 
 			%> 
-			<li class="disabled" ><a><%=name %>用户</a></li>
-			<li ><a href="UserLogin.jsp">退出登录</a></li>		
+			<li class="disabled" ><a><%=u.getLoginName() %>用户</a></li>
+			<li ><a href="${pageContext.request.contextPath}/user/logout.action">退出登录</a></li>		
 		</ul>
 		<script src="./js/bootstrap.min.js"></script>
 	</div>

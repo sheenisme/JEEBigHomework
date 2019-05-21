@@ -4,7 +4,7 @@
 <configuration>
 	<!-- 别名定义 -->
 	<typeAliases>
-		<package name="com.itheima.core.po" />
+		<package name="jee.com.core.po" />
 		
 	</typeAliases>
 </configuration>

@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="./css/bootstrap.min.css" />
-<script src="./js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css" />
+<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 <title>管理员首页</title>
 <style>
 body{
@@ -66,11 +66,12 @@ body{
 			<li class="active"><a href="">我的主页</a></li>
 			<li ><a href="http://www.sheensong.top/wordpress">论坛</a></li>
 			<li ><a href="Feedback.jsp">反馈</a></li>
+			<%@ page import="java.sql.*,java.util.*,jee.com.core.po.*" %>
 			<%
-				String name=(String)request.getSession().getAttribute("AdminSession"); 
+				Admin u=(Admin)request.getSession().getAttribute("ADMIN_SESSION"); 
 			%> 
-			<li class="disabled" ><a><%=name %>管理员</a></li>
-			<li ><a href="UserLogin.jsp">退出登录</a></li>		
+			<li class="disabled" ><a><%=u.getLoginName() %>管理员</a></li>
+			<li ><a href="${pageContext.request.contextPath}/admin/logout.action">退出登录</a></li>		
 		</ul>
 		
 	</div>
@@ -103,7 +104,7 @@ body{
 
 <div id="foot" align="center" class="container">
 	<p align="center"> 
-		© jeeNetClient v1.1.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系统当前时间为：<%=new java.sql.Timestamp(System.currentTimeMillis()).toString().substring(0,19) %>
+		© WeiyiNetClient v1.1.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系统当前时间为：<%=new java.sql.Timestamp(System.currentTimeMillis()).toString().substring(0,19) %>
 	<br>
 	</p>
 </div>

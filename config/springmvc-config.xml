@@ -14,9 +14,7 @@
     http://www.springframework.org/schema/aop/spring-aop-4.3.xsd 
     http://www.springframework.org/schema/tx 
     http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
-    <!-- 加载属性文件 -->
-    <context:property-placeholder 
-               location="classpath:resource.properties" />
+
     <!-- 配置扫描器 -->
     <context:component-scan 
                base-package="jee.com.core.web.controller" />
