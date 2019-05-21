@@ -9,16 +9,16 @@ import java.sql.*;
 public class DatabaseConnection{
 	private Connection con = null;  
 	//Mysql的JDBC连接属性：
-//	  private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-//      private static final String URL = "jdbc:mysql://localhost:3306/mydb?&useSSL=false&serverTimezone=UTC";  
-//      private static final String USER = "root";  
-//      private static final String PASS = "";
+	  private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+      private static final String URL = "jdbc:mysql://localhost:3306/jeedb?&useSSL=false&serverTimezone=UTC";  
+      private static final String USER = "root";  
+      private static final String PASS = "";
       
-	 
-	private static final String DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";  
-    private static final String URL = "jdbc:sqlserver://localhost:1433;databaseName=weiyi"; 
-    private static final String USER = "sa";  
-    private static final String PASS = "123456";  
+//	 
+//	private static final String DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";  
+//    private static final String URL = "jdbc:sqlserver://localhost:1433;databaseName=weiyi"; 
+//    private static final String USER = "sa";  
+//    private static final String PASS = "123456";  
     public DatabaseConnection()throws Exception{
     	//加载驱动
         Class.forName(DRIVER);

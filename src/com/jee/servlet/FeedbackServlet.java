@@ -60,10 +60,10 @@ public class FeedbackServlet extends HttpServlet {
 				out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">");
 				out.println("<link rel=\"stylesheet\" href=\"./css/form.css\" /></head>");
 				out.println("<body>");
-				out.println("<div class='container'><p class='title'>唯e客户服务系统</p>");
+				out.println("<div class='container'><p class='title'>myjee客户服务系统</p>");
 				out.println("<div class='box'>	<div id='register_box'>");
 				out.println("<h2>您的信息反馈成功！"+"!</h2><br><br><h2>感谢您对我们的服务做出反馈！</h2><br>");
-				out.println("<pre><a href='UserLogin.jsp' target='_top'>唯e数码，您身边的电脑专家</a></pre></div></div></div>");//
+				out.println("<pre><a href='UserLogin.jsp' target='_top'>myjee数码，您身边的电脑专家</a></pre></div></div></div>");//
 				out.println("</body></html>");
 			} catch (Exception e) {
 				System.out.println("FeedbackServlet.java文件插入数据出现错误！");

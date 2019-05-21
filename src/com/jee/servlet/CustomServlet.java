@@ -65,10 +65,10 @@ public class CustomServlet extends HttpServlet {
 				out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">");
 				out.println("<link rel=\"stylesheet\" href=\"./css/form.css\" /></head>");
 				out.println("<body>");
-				out.println("<div class='container'><p class='title'>唯e客户服务系统</p>");
+				out.println("<div class='container'><p class='title'>myjee客户服务系统</p>");
 				out.println("<div class='box'>	<div id='register_box'>");
 				out.println("<h2>报修成功，您的维修单号为："+vo.getOrderId()+"!</h2><br><br><h2>请注意接听电话!</h2><br>");
-				out.println("<pre><a href='#'>唯e数码，您身边的电脑专家</a></pre></div></div></div>");//
+				out.println("<pre><a href='#'>myjee数码，您身边的电脑专家</a></pre></div></div></div>");//
 				out.println("</body></html>");
 				//System.out.println("报修成功，您的维修单号为："+vo.getOrderId());
 			} catch (Exception e) {
@@ -90,10 +90,10 @@ public class CustomServlet extends HttpServlet {
 				out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">");
 				out.println("<link rel=\"stylesheet\" href=\"./css/form.css\" /></head>");
 				out.println("<body>");
-				out.println("<div class='container'><p class='title'>唯e客户服务系统</p>");
+				out.println("<div class='container'><p class='title'>myjee客户服务系统</p>");
 				out.println("<div class='box'>	<div id='register_box'>");
 				out.println("<h2>评价成功！"+"!</h2><br><br><h2>感谢您对我们的服务做出的评价！</h2><br>");
-				out.println("<pre><a href='#'>唯e数码，您身边的电脑专家</a></pre></div></div></div>");//
+				out.println("<pre><a href='#'>myjee数码，您身边的电脑专家</a></pre></div></div></div>");//
 				out.println("</body></html>");
 			} catch (Exception e) {
 				System.out.println("CustomServlet.java文件插入数据出现错误！");
@@ -118,11 +118,11 @@ public class CustomServlet extends HttpServlet {
 //					out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">");
 //					out.println("<link rel=\"stylesheet\" href=\"./css/form.css\" /></head>");
 //					out.println("<body>");
-//					out.println("<div class='container'><p class='title'>唯e客户服务系统</p>");
+//					out.println("<div class='container'><p class='title'>myjee客户服务系统</p>");
 //					out.println("<div class='box'>	<div id='register_box'>");
 //					out.println("<h2>修改账户信息成功！<br> 修改后您的账户名为："+vo.getLoginName()+"!</h2><br>");
 //					out.println("<a href='UserLogin.jsp' target='_top'>点击此处返回重新登录</a><br><br>");
-//					out.println("<pre><a>唯e数码，您身边的电脑专家</a></pre></div></div></div>");//
+//					out.println("<pre><a>myjee数码，您身边的电脑专家</a></pre></div></div></div>");//
 //					out.println("</body></html>");
 					//request.getRequestDispatcher("/UserLogin.jsp").forward(request, response);
 				    out.println("<html>");  

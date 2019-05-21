@@ -1,0 +1,43 @@
+package jee.com.core.po;
+
+import java.io.Serializable;
+
+public class Feedback implements Serializable{
+	private static final long serialVersionUID = 1L;
+	private int id;
+	private String linkName;
+	private String linkEmail;
+	private String theme;
+	private String description;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getLinkName() {
+		return linkName;
+	}
+	public void setLinkName(String linkName) {
+		this.linkName = linkName;
+	}
+	public String getLinkEmail() {
+		return linkEmail;
+	}
+	public void setLinkEmail(String linkEmail) {
+		this.linkEmail = linkEmail;
+	}
+	public String getTheme() {
+		return theme;
+	}
+	public void setTheme(String theme) {
+		this.theme = theme;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+}

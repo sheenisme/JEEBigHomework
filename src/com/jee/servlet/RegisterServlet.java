@@ -66,7 +66,7 @@ public class RegisterServlet extends HttpServlet {
 					out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">");
 					out.println("<link rel=\"stylesheet\" href=\"./css/form.css\" /></head>");
 					out.println("<body>");
-					out.println("<div class='container'><p class='title'>唯e客户服务系统</p>");
+					out.println("<div class='container'><p class='title'>myjee客户服务系统</p>");
 					out.println("<div class='box'>	<div id='register_box'>");
 					out.println("<h2>注册账户成功！您的账户名为："+vo.getLoginName()+"!</h2><br>");
 					out.println("<pre><a href='UserLogin.jsp'>返回登录页面</a></pre></div></div></div>");//
@@ -97,7 +97,7 @@ public class RegisterServlet extends HttpServlet {
 					out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">");
 					out.println("<link rel=\"stylesheet\" href=\"./css/form.css\" /></head>");
 					out.println("<body>");
-					out.println("<div class='container'><p class='title'>唯e客户服务系统</p>");
+					out.println("<div class='container'><p class='title'>myjee客户服务系统</p>");
 					out.println("<div class='box'>	<div id='register_box'>");
 					out.println("<h2>注册管理员成功！您的账户名为："+vo.getLoginName()+"!</h2><br>");
 					out.println("<pre><a href='AdminLogin.jsp' target='_top'>返回登录页面</a></pre></div></div></div>");//
