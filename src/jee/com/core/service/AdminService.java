@@ -5,4 +5,5 @@ import jee.com.core.po.Admin;
 
 public interface AdminService {
 	public List<Admin> findAdminByName(String name);
+	public int CreateAdmin(Admin po);
 }

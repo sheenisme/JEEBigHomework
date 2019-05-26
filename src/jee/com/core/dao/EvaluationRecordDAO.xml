@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="jee.com.core.dao.EvaluationRecordDAO" >
+	<!-- 新建评价记录 -->
+	<insert id="doCreate" parameterType="EvaluationRecord">
+	insert into evaluation_record (
+	order_id
+	,user_id
+	,date
+	,level
+	,context
+	,remark
+	)values(
+	#{order_id}
+	,#{user_id}
+	,#{date}
+	,#{level}
+	,#{context}
+	,#{remark}
+	) 
+	</insert>
+</mapper>

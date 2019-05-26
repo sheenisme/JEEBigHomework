@@ -1,12 +1,10 @@
 package jee.com.core.dao;
 
 import java.util.List;
-
 import org.apache.ibatis.annotations.Param;
-
 import jee.com.core.po.User;
 
-public interface UserDAO {
+public interface UserDAO  extends DAO<User, Integer> {
 	/**
 	 * 根据登录名（loginName）查询指定客户对象
 	 * @param name 要查询对象的登录名

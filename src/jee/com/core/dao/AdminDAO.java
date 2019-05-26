@@ -19,7 +19,7 @@ public interface AdminDAO extends DAO<Admin, Integer> {
 	 * @return Admin对象列表
 	 * @throws Exception
 	 */
-	public List<Admin> findByName(@Param("loginname") String name)throws Exception;
+	public List<Admin> findByName(@Param("login_name") String name)throws Exception;
 	
 	/**
 	 * 根据邮箱查询指定管理员对象

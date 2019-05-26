@@ -5,8 +5,8 @@ import java.io.Serializable;
 public class Feedback implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private int id;
-	private String linkName;
-	private String linkEmail;
+	private String name;
+	private String email;
 	private String theme;
 	private String description;
 	public int getId() {
@@ -15,17 +15,17 @@ public class Feedback implements Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getLinkName() {
-		return linkName;
+	public String getName() {
+		return name;
 	}
-	public void setLinkName(String linkName) {
-		this.linkName = linkName;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getLinkEmail() {
-		return linkEmail;
+	public String getEmail() {
+		return email;
 	}
-	public void setLinkEmail(String linkEmail) {
-		this.linkEmail = linkEmail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getTheme() {
 		return theme;
@@ -39,5 +39,5 @@ public class Feedback implements Serializable{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
+	
 }

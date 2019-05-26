@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 public class Admin implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int id;
-	private String loginName;
+	private String login_name;
 	private String password;
 	private String name;
 	private String sex;
@@ -15,7 +15,7 @@ public class Admin implements Serializable {
 	private String address;
 	private Timestamp date;
 	private String grade;
-	private int upperId;
+	private int upper_id;
 	private String remark;
 	
 	public int getId() {
@@ -24,12 +24,7 @@ public class Admin implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getLoginName() {
-		return loginName;
-	}
-	public void setLoginName(String loginName) {
-		this.loginName = loginName;
-	}
+
 	public String getPassword() {
 		return password;
 	}
@@ -84,10 +79,16 @@ public class Admin implements Serializable {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	public int getUpperId() {
-		return upperId;
+	public String getLogin_name() {
+		return login_name;
 	}
-	public void setUpperId(int upperId) {
-		this.upperId = upperId;
+	public void setLogin_name(String login_name) {
+		this.login_name = login_name;
+	}
+	public int getUpper_id() {
+		return upper_id;
+	}
+	public void setUpper_id(int upper_id) {
+		this.upper_id = upper_id;
 	}	
 }

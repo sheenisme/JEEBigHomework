@@ -30,4 +30,14 @@ public class UserServiceImpl implements UserService{
 		return  user;
 	}
 
+	@Override
+	public int createUser(User user) {
+		try {
+			return userdao.doCreate(user);
+		} catch (Exception e) {
+			System.out.println("创建新用户出现异常。");
+			e.printStackTrace();
+		}
+		return -1;
+	}
 }

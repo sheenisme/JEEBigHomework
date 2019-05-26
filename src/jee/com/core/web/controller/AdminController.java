@@ -15,7 +15,7 @@ import jee.com.core.service.AdminService;
 
 
 /**
- * Admin控制器类
+ * 管理员控制器类
  */
 @Controller
 @RequestMapping( "/admin")
@@ -25,38 +25,25 @@ public class AdminController {
 	private AdminService adminService;
 	
 	/**
-	 * Admin登录
+	 * 管理员登录
 	 */
 	@RequestMapping(value = "/login.action", method = RequestMethod.POST)
-	public String login(String loginname, String password,String autoLogin,Model model, HttpSession session,HttpServletRequest request,HttpServletResponse response) {
+	public String login(String login_name, String password,String autoLogin,Model model, HttpSession session,HttpServletRequest request,HttpServletResponse response) {
 		// 通过账号和密码查询管理员
-		List<Admin> list = adminService.findAdminByName(loginname);
+		List<Admin> list = adminService.findAdminByName(login_name);
 		for(Admin admin:list){
 			if(admin != null){		
-				// 将Admin对象添加到Session
+				// 将管理员对象添加到Session
 				if(password.trim().equals(admin.getPassword()))
 				{
 					session.setAttribute("ADMIN_SESSION", admin);
 					//System.out.println("这里是：AdminController类的login()方法！   恭喜您登录成功！");
 					if("save".equals(request.getParameter("autoLogin"))) {
-		                Cookie cookie = new Cookie("ADMIN_COOKIE",loginname+"#"+password+"#"+admin.getId());
+		                Cookie cookie = new Cookie("ADMIN_COOKIE",login_name+"#"+password+"#"+admin.getId());
 		                cookie.setMaxAge(60 * 60 * 24); 
 		                response.addCookie(cookie);
 					}
 					
-//					//查看是否存入cookie
-//					Cookie cookies[]=request.getCookies();
-//					String name1="";
-//					String password1="";
-//					if(cookies!=null){
-//						for(int i=0;i<cookies.length;i++){
-//							if(cookies[i].getName().equals("Admin_COOKIE")){
-//								name1 = cookies[i].getValue().split("#")[0];
-//								password1 = cookies[i].getValue().split("#")[1];
-//								System.out.println(name1+password1);
-//							}
-//						}
-//					}
 					// 跳转到主页面
 					return "AdminMainUI";
 				}
@@ -67,6 +54,25 @@ public class AdminController {
 		return "AdminLogin";
 	}
 	
+	/**
+	 * 创建新的管理员
+	 * @param admin
+	 * @return
+	 */
+	@RequestMapping(value = "/register.action")
+	public String CreateAdmin(Admin admin,Model model) {
+	    // 执行Service层中的创建方法，返回的是受影响的行数
+	    int rows = adminService.CreateAdmin(admin);
+	    if(rows > 0){
+	    	model.addAttribute("msg", "恭喜您，创建新管理员成功！！！您可以退出当前账号登陆新账号了！");
+	         // 返回到提示信息页面
+			return "message";
+	    }else{
+	    	model.addAttribute("msg", "很遗憾，创建新管理员失败，请返回后重试！！");
+	         // 返回到提示信息页面
+			return "message";
+	    }
+	}
 	
 	/**
 	 * 退出登录
@@ -79,7 +85,7 @@ public class AdminController {
 	    return "redirect:login.action";
 	}
 	/**
-	 * 向用户登陆页面跳转
+	 * 向登陆页面跳转
 	 */
 	@RequestMapping(value = "/login.action", method = RequestMethod.GET)
 	public String toLogin() {

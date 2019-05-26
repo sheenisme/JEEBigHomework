@@ -5,54 +5,53 @@ import java.sql.Timestamp;
 
 public class EvaluationRecord implements Serializable{
 	private static final long serialVersionUID = 1L;
-	private int evaluateId;
-	private String orderId;
-	private int userId;
-	private Timestamp evaluateDate;
-	private int starLevel;
-	private String Context;
+	private int evaluate_id;
+	private String order_id;
+	private int user_id;
+	private Timestamp date;
+	private int level;
+	private String context;
 	private String remark;
-	
-	public int getStarLevel() {
-		return starLevel;
+	public int getEvaluate_id() {
+		return evaluate_id;
 	}
-	public void setStarLevel(int starLevel) {
-		this.starLevel = starLevel;
+	public void setEvaluate_id(int evaluate_id) {
+		this.evaluate_id = evaluate_id;
 	}
-	public Timestamp getEvaluateDate() {
-		return evaluateDate;
+	public String getOrder_id() {
+		return order_id;
 	}
-	public void setEvaluateDate(Timestamp evaluateDate) {
-		this.evaluateDate = evaluateDate;
+	public void setOrder_id(String order_id) {
+		this.order_id = order_id;
+	}
+	public int getUser_id() {
+		return user_id;
+	}
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
+	}
+	public Timestamp getDate() {
+		return date;
+	}
+	public void setDate(Timestamp date) {
+		this.date = date;
+	}
+	public int getLevel() {
+		return level;
+	}
+	public void setLevel(int level) {
+		this.level = level;
 	}
 	public String getContext() {
-		return Context;
+		return context;
 	}
 	public void setContext(String context) {
-		Context = context;
+		this.context = context;
 	}
 	public String getRemark() {
 		return remark;
 	}
 	public void setRemark(String remark) {
 		this.remark = remark;
-	}
-	public int getEvaluateId() {
-		return evaluateId;
-	}
-	public void setEvaluateId(int evaluateId) {
-		this.evaluateId = evaluateId;
-	}
-	public String getOrderId() {
-		return orderId;
-	}
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-	public int getUserId() {
-		return userId;
-	}
-	public void setUserId(int userId) {
-		this.userId = userId;
 	}
 }

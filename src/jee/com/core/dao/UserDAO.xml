@@ -8,4 +8,32 @@
 	    from user
 	    where loginname = #{loginname}
     </select>
+    <!-- 添加客户 -->
+    <insert id="doCreate" parameterType="User">
+    	insert into user( loginname,
+    	password,
+    	name,
+    	sex,
+    	email,
+    	phone,
+   		address,
+   		birthday,
+   		date,
+   		point,
+   		unit,
+   		remark
+    	)values( #{loginname},
+    	#{password},
+    	#{name},
+    	#{sex},
+    	#{email},
+    	#{phone},
+   		#{address},
+   		#{birthday},
+   		#{date},
+   		#{point},
+   		#{unit},
+   		#{remark}
+    	)
+    </insert>
 </mapper>

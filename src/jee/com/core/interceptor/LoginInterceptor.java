@@ -22,7 +22,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 		// URL:除了登录请求外，其他的URL都进行拦截控制
 		//判断是不是用户登录
 		if(url.indexOf("/user") >= 0) {
-			if (url.indexOf("/login.action") >= 0) {
+			if (url.indexOf("/login.action") >= 0 || url.indexOf("/register.action") >= 0) {
 				return true;
 			}
 			// 获取Session
@@ -63,6 +63,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 			HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
 	}
+	
 	@Override
 	public void afterCompletion(HttpServletRequest request, 
 			HttpServletResponse response, Object handler, Exception ex)

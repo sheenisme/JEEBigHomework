@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>唯 e 客户服务系统</title>
+	<title>Jee 服务系统</title>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/Check.js">
 	</script>
@@ -24,7 +24,7 @@ if(cookies!=null){
 }
 %>
 	<div class="container">
-		<p class="title">myjee 客户服务系统</p>
+		<p class="title">jee 服务系统</p>
 		<div class="box">
 			<div id="login_box">
 			<h2>管理员登录页面</h2>
@@ -37,7 +37,7 @@ if(cookies!=null){
 			<form action="${pageContext.request.contextPath}/admin/login.action" method="post" name="form" onsubmit="return checklogin()">
 				<input type="hidden" name="action" value="AdminLogin">
 				<div class="ui field">		
-				账号：<input id="loginname" type="text" name="loginname" value="<%=name %>"><br>
+				账号：<input id="loginname" type="text" name="login_name" value="<%=name %>"><br>
 				</div>
 				<div class="ui field">	
 				密码：<input id="password" type="password" name="password" value="<%=password %>"><br>
@@ -52,14 +52,14 @@ if(cookies!=null){
 			</div>
 			<br>
 			<div>
-				<pre>myjee  客户服务系统-管理员登录页面!    <a href="foundmm.jsp">找回密码</a></pre>
+				<pre>jee 服务系统-管理员登录页面!    <a href="foundmm.jsp">找回密码</a></pre>
 			</div> 
 		</div>
 	</div>
 	<br>
 	<br>
 	<p class="foot">
-		© myjee NetClient v1.1.1
+		© jee NetClient v1.1.1
 		<br>
 	</p>
 </body>

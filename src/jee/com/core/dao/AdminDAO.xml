@@ -6,6 +6,37 @@
     <select id="findByName" parameterType="String" resultType="Admin">
 	    select *
 	    from admins
-	    where loginname = #{loginname}
+	    where login_name = #{login_name}
     </select>
+    
+    <!-- 创建管理员 -->
+    <insert id="doCreate">
+    insert into admins(
+    login_name
+	,password
+	,name
+	,sex
+	,email
+	,phone
+	,address
+	,date
+	,grade
+	,upper_id
+	,remark
+    )values(
+    #{login_name}
+	,#{password}
+	,#{name}
+	,#{sex}
+	,#{email}
+	,#{phone}
+	,#{address}
+	,#{date}
+	,#{grade}
+	,#{upper_id}
+	,#{remark}
+    )
+    </insert>
+    
+    
 </mapper>

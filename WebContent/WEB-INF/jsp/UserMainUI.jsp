@@ -63,14 +63,14 @@ body{
 <div id="header">
 	<div class="container">	
 		<ul class="nav nav-tabs nav-justified" >
-			<li class="active"><a href="">主页</a></li>
+			<li class="active"><a href="#">主页</a></li>
 			<li ><a href="http://www.sheensong.top/wordpress">论坛</a></li>
-			<li ><a href="Feedback.jsp">反馈</a></li>
+			<li ><a href="${pageContext.request.contextPath}/Feedback.jsp">反馈</a></li>
 			<%@ page import="java.sql.*,java.util.*,jee.com.core.po.*" %>
 			<%
 				User u=(User)request.getSession().getAttribute("USER_SESSION"); 
 			%> 
-			<li class="disabled" ><a><%=u.getLoginName() %>用户</a></li>
+			<li class="disabled" ><a><%=u.getLoginname() %>用户</a></li>
 			<li ><a href="${pageContext.request.contextPath}/user/logout.action">退出登录</a></li>		
 		</ul>
 		<script src="./js/bootstrap.min.js"></script>
@@ -81,8 +81,8 @@ body{
 <div id="main">
 	<div id="left" class="container">
 		<ul id="navigation">
-			<li><a href="CreateRepairOreders.jsp" target="rightFrame">&nbsp;&nbsp;我&nbsp;要&nbsp;报&nbsp;修&nbsp;&nbsp;</a></li>
-			<li><a href="CreateEvaluationRecord.jsp" target="rightFrame">评价此次维修</a></li>
+			<li><a href="${pageContext.request.contextPath}/CreateRepairOreders.jsp" target="rightFrame">&nbsp;&nbsp;我&nbsp;要&nbsp;报&nbsp;修&nbsp;&nbsp;</a></li>
+			<li><a href="${pageContext.request.contextPath}/CreateEvaluationRecord.jsp" target="rightFrame">评价此次维修</a></li>
 			<li><a href="ShowRepairOrders.jsp" target="rightFrame">查看我的维修</a></li>
 			<li><a href="ShowEvaluationRecord.jsp" target="rightFrame">查看我的评价</a></li>
 			<li><a href="ShowAllRepairOrders.jsp" target="rightFrame">查看所有维修</a></li>

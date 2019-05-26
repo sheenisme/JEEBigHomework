@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>myjee 客户服务系统</title>
+	<title>jee 服务系统</title>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/form.css" />
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/Check.js">
 	</script>
@@ -23,7 +23,7 @@ if(cookies!=null){
 }
 %>
 	<div class="container">
-		<p class="title">myjee 客户服务系统</p>
+		<p class="title">jee 服务系统</p>
 		<div class="box">
 				<div id="login_box">
 						<h2>登录页面</h2>
@@ -46,18 +46,18 @@ if(cookies!=null){
 						</div>
 						<div class="m">
 							<input class="ui button" type="submit" value="登录">
-							<a href="UserRegister.jsp"><input class="ui button" type="button"  value="注册"></a>
-							<a href="admin.jsp" class="ui button">管理员登录</a>
+							<a href="${pageContext.request.contextPath}/userreg.jsp"><input class="ui button" type="button"  value="注册"></a>
+							<a href="${pageContext.request.contextPath}/admin.jsp" class="ui button">管理员登录</a>
 						</div>
 						</form>	
 				</div>
 				<br>
-				<div><pre>myjee 客户服务系统-登录页面!&nbsp;&nbsp;&nbsp;<a href="foundmm.jsp">找回密码</a></pre></div> 
+				<div><pre>jee 服务系统-登录页面!&nbsp;&nbsp;&nbsp;<a href="foundmm.jsp">找回密码</a></pre></div> 
 		</div>
 	</div>
 	<br>
 	<p class="foot">
-		© jeeNetClient v1.1.1
+		© jee NetClient v1.1.1
 		<br>
 	</p>
 </body>

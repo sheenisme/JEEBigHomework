@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="jee.com.core.dao.RepairOrdersDAO" >
+	<!-- 新建维修订单 -->
+	<insert id="doCreate" parameterType="RepairOrders">
+	insert into repair_orders (
+	order_id,
+	custom_id,
+	apply_time,
+	link_name,
+	link_phone,
+	link_address,
+	repair_time,
+	type,
+	description,
+	remark
+	)values(
+	#{order_id}
+	,#{custom_id}
+	,#{apply_time}
+	,#{link_name}
+	,#{link_phone}
+	,#{link_address}
+	,#{repair_time}
+	,#{type}
+	,#{description}
+	,#{remark}
+	) 
+	</insert>
+</mapper>

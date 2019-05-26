@@ -5,57 +5,57 @@ import java.sql.Timestamp;
 
 public class RepairOrders implements Serializable{
 	private static final long serialVersionUID = 1L;
-	private String orderId;
-	private int customId;
-	private Timestamp applyTime;
-	private String linkName;
-	private String linkPhone;
-	private String linkAddress;
-	private Timestamp repairTime;
+	private String order_id;
+	private int custom_id;
+	private Timestamp apply_time;
+	private String link_name;
+	private String link_phone;
+	private String link_address;
+	private Timestamp repair_time;
 	private String type;//repair type故障的类型
 	private String description;//problem description 故障问题的详细描述
 	private String remark;
-	public String getOrderId() {
-		return orderId;
+	public String getOrder_id() {
+		return order_id;
 	}
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
+	public void setOrder_id(String order_id) {
+		this.order_id = order_id;
 	}
-	public int getCustomId() {
-		return customId;
+	public int getCustom_id() {
+		return custom_id;
 	}
-	public void setCustomId(int customId) {
-		this.customId = customId;
+	public void setCustom_id(int custom_id) {
+		this.custom_id = custom_id;
 	}
-	public Timestamp getApplyTime() {
-		return applyTime;
+	public Timestamp getApply_time() {
+		return apply_time;
 	}
-	public void setApplyTime(Timestamp applyTime) {
-		this.applyTime = applyTime;
+	public void setApply_time(Timestamp apply_time) {
+		this.apply_time = apply_time;
 	}
-	public String getLinkName() {
-		return linkName;
+	public String getLink_name() {
+		return link_name;
 	}
-	public void setLinkName(String linkName) {
-		this.linkName = linkName;
+	public void setLink_name(String link_name) {
+		this.link_name = link_name;
 	}
-	public String getLinkPhone() {
-		return linkPhone;
+	public String getLink_phone() {
+		return link_phone;
 	}
-	public void setLinkPhone(String linkPhone) {
-		this.linkPhone = linkPhone;
+	public void setLink_phone(String link_phone) {
+		this.link_phone = link_phone;
 	}
-	public String getLinkAddress() {
-		return linkAddress;
+	public String getLink_address() {
+		return link_address;
 	}
-	public void setLinkAddress(String linkAddress) {
-		this.linkAddress = linkAddress;
+	public void setLink_address(String link_address) {
+		this.link_address = link_address;
 	}
-	public Timestamp getRepairTime() {
-		return repairTime;
+	public Timestamp getRepair_time() {
+		return repair_time;
 	}
-	public void setRepairTime(Timestamp repairTime) {
-		this.repairTime = repairTime;
+	public void setRepair_time(Timestamp repair_time) {
+		this.repair_time = repair_time;
 	}
 	public String getType() {
 		return type;

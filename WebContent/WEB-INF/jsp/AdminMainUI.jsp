@@ -63,14 +63,14 @@ body{
 <div id="header">
 	<div class="container">	
 		<ul class="nav nav-tabs nav-justified" >
-			<li class="active"><a href="">我的主页</a></li>
+			<li class="active"><a href="#">我的主页</a></li>
 			<li ><a href="http://www.sheensong.top/wordpress">论坛</a></li>
-			<li ><a href="Feedback.jsp">反馈</a></li>
+			<li ><a href="${pageContext.request.contextPath}/Feedback.jsp">反馈</a></li>
 			<%@ page import="java.sql.*,java.util.*,jee.com.core.po.*" %>
 			<%
 				Admin u=(Admin)request.getSession().getAttribute("ADMIN_SESSION"); 
 			%> 
-			<li class="disabled" ><a><%=u.getLoginName() %>管理员</a></li>
+			<li class="disabled" ><a><%=u.getLogin_name() %>管理员</a></li>
 			<li ><a href="${pageContext.request.contextPath}/admin/logout.action">退出登录</a></li>		
 		</ul>
 		
@@ -82,7 +82,7 @@ body{
 	<div id="left" class="container">
 		<ul id="navigation">
 			<!-- CreateRepairReceipt.jsp -->
-			<li><a href="CreateRepairReceipt.jsp" target="rightFrame">维&nbsp;修&nbsp;回&nbsp;执&nbsp;单</a></li>
+			<li><a href="${pageContext.request.contextPath}/CreateRepairReceipt.jsp" target="rightFrame">维&nbsp;修&nbsp;回&nbsp;执&nbsp;单</a></li>
 			<li><a href="CreatePcParts.jsp" target="rightFrame">录入配件信息</a></li>
 			<li><a href="ShowAllRepairReceipt.jsp" target="rightFrame">查看回执信息</a></li>
 			<li><a href="ShowAllRepairOrders.jsp" target="rightFrame">查看维修信息</a></li>
@@ -93,7 +93,7 @@ body{
 			<li><a href="" target="rightFrame">查看统计信息</a></li>
 			<li><a href="RevisePcParts.jsp" target="rightFrame">修改配件信息</a></li>
 			<li><a href="ReviseAdmin.jsp" target="rightFrame">修改个人信息</a></li>
-			<li><a href="AdminRegister.jsp" target="rightFrame">申请下级管理员</a></li>
+			<li><a href="${pageContext.request.contextPath}/adminreg.jsp" target="rightFrame">申请下级管理员</a></li>
 		</ul>
 	</div>
 	<div id="right" class="container">
@@ -104,7 +104,7 @@ body{
 
 <div id="foot" align="center" class="container">
 	<p align="center"> 
-		© WeiyiNetClient v1.1.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系统当前时间为：<%=new java.sql.Timestamp(System.currentTimeMillis()).toString().substring(0,19) %>
+		© jee NetClient v1.1.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系统当前时间为：<%=new java.sql.Timestamp(System.currentTimeMillis()).toString().substring(0,19) %>
 	<br>
 	</p>
 </div>

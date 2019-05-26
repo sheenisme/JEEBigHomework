@@ -10,8 +10,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import jee.com.core.po.EvaluationRecord;
+import jee.com.core.po.RepairOrders;
 import jee.com.core.po.User;
+import jee.com.core.service.EvaluationRecordService;
+import jee.com.core.service.RepairOrdersService;
 import jee.com.core.service.UserService;
+import jee.com.core.service.impl.MakeOrderNum;
 
 /**
  * 用户控制器类
@@ -22,6 +28,7 @@ public class UserController {
 	// 依赖注入
 	@Autowired
 	private UserService userService;
+	
 	/**
 	 * 用户登录
 	 */
@@ -65,6 +72,64 @@ public class UserController {
 		return "UserLogin";
 	}
 	
+	/**
+	 * 创建新用户
+	 */
+	@RequestMapping(value = "/register.action")
+	//@ResponseBody
+	public String userCreate(User user,Model model, HttpSession session) {
+	    // 执行Service层中的创建方法，返回的是受影响的行数
+		//System.out.println("创建新用户ing");
+	    int rows = userService.createUser(user);
+	    if(rows > 0){
+	        return "redirect:login.action";
+	    }else{
+	    	model.addAttribute("msg", "很遗憾，创建新用户失败，请返回后重试！！");
+	         // 返回到提示信息页面
+			return "message";
+	    }
+	}
+	
+	@Autowired
+	private RepairOrdersService repairOrderService;
+	/**
+	 * 创建维修订单
+	 */
+	@RequestMapping(value = "/createRepairOrders.action")
+	public String createRepairOrders(RepairOrders po,Model model) {
+		
+		po.setOrder_id(MakeOrderNum.getOrderNumber());
+		int rows = repairOrderService.createRepairOrders(po);
+	    if(rows > 0){
+	    	model.addAttribute("msg", "恭喜您，您的维修订单已提交！");
+	         // 返回到提示信息页面
+			return "message";
+
+	    }else{
+	    	model.addAttribute("msg", "很遗憾，您的订单提交失败，请核对您输入的数据后重试！");
+	         // 返回到提示信息页面
+			return "message";
+	    }
+	}
+	    
+	@Autowired
+	private EvaluationRecordService evaluationRecordService;
+	/**
+	* 创建新的评价记录
+	*/
+	@RequestMapping(value = "/createEvaluationRecord.action")
+	public String createEvaluationRecord(EvaluationRecord po,Model model) {			
+		int rows = evaluationRecordService.createEvaluationRecord(po);
+		if(rows > 0){
+			model.addAttribute("msg", "恭喜您，您的评价记录已提交！");
+		     // 返回到提示信息页面
+		return "message";
+		}else{
+		    model.addAttribute("msg", "很遗憾，您的评价提交失败，请核对您输入的数据后重试！");
+		   // 返回到提示信息页面
+			return "message";
+		}
+	}
 	
 	/**
 	 * 退出登录
@@ -76,6 +141,7 @@ public class UserController {
 	    // 重定向到登录页面的跳转方法
 	    return "redirect:login.action";
 	}
+	
 	/**
 	 * 向用户登陆页面跳转
 	 */
