@@ -1,5 +1,7 @@
 package jee.com.core.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,5 +22,14 @@ public class RepairOrdersServiceImp implements RepairOrdersService{
 			e.printStackTrace();
 		}
 		return -1;
+	}
+	@Override
+	public List<RepairOrders> showAll() {
+		try {
+			return dao.findAll();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

@@ -2,6 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="jee.com.core.dao.RepairOrdersDAO" >
+	<select id="findAll" resultType="RepairOrders">
+	select * from
+		 repair_orders
+	</select>
+
 	<!-- 新建维修订单 -->
 	<insert id="doCreate" parameterType="RepairOrders">
 	insert into repair_orders (

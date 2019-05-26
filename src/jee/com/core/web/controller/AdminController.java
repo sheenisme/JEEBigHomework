@@ -11,7 +11,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import jee.com.core.po.Admin;
+import jee.com.core.po.PcParts;
+import jee.com.core.po.RepairReceipt;
 import jee.com.core.service.AdminService;
+import jee.com.core.service.PcPartsService;
+import jee.com.core.service.RepairReceiptService;
 
 
 /**
@@ -73,6 +77,50 @@ public class AdminController {
 			return "message";
 	    }
 	}
+	
+	
+	/**
+	 * 添加新的配件
+	 */
+	//依赖注入服务
+	@Autowired
+	private PcPartsService pcPartservice;
+	
+	@RequestMapping(value = "/createPcParts.action")
+	public String CreatePcParts(PcParts pcparts,Model model) {
+	    // 执行Service层中的创建方法，返回的是受影响的行数
+	    int rows = pcPartservice.CreatePcParts(pcparts);
+	    if(rows > 0){
+	    	model.addAttribute("msg", "恭喜您，添加新的配件成功！！！");
+	         // 返回到提示信息页面
+			return "message";
+	    }else{
+	    	model.addAttribute("msg", "很遗憾，添加新配件失败，请返回后重试！！");
+	         // 返回到提示信息页面
+			return "message";
+	    }
+	}
+	
+	/**
+	 * 添加维修回执单
+	 */
+	//依赖注入服务
+	@Autowired
+	private RepairReceiptService repairReceiptservice;
+	@RequestMapping(value = "/createRepairReceipt.action")
+	public String CreateRepairReceipt(RepairReceipt repairReceipt,Model model) {
+		 // 执行Service层中的创建方法，返回的是受影响的行数
+		int rows = repairReceiptservice.CreateRepairReceipt(repairReceipt);
+		if(rows > 0){
+		    model.addAttribute("msg", "恭喜您，添加新的维修回执单成功！！！");
+		    // 返回到提示信息页面
+			return "message";
+		}else{
+		    model.addAttribute("msg", "很遗憾，添加新的维修回执单失败，请返回后重试！！");
+		    // 返回到提示信息页面
+			return "message";
+		}
+	}	
 	
 	/**
 	 * 退出登录

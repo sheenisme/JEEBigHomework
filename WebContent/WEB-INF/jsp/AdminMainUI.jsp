@@ -83,7 +83,7 @@ body{
 		<ul id="navigation">
 			<!-- CreateRepairReceipt.jsp -->
 			<li><a href="${pageContext.request.contextPath}/CreateRepairReceipt.jsp" target="rightFrame">维&nbsp;修&nbsp;回&nbsp;执&nbsp;单</a></li>
-			<li><a href="CreatePcParts.jsp" target="rightFrame">录入配件信息</a></li>
+			<li><a href="${pageContext.request.contextPath}/CreatePcParts.jsp" target="rightFrame">录入配件信息</a></li>
 			<li><a href="ShowAllRepairReceipt.jsp" target="rightFrame">查看回执信息</a></li>
 			<li><a href="ShowAllRepairOrders.jsp" target="rightFrame">查看维修信息</a></li>
 			<li><a href="ShowAllEvaluationRecord.jsp" target="rightFrame">查看评价信息</a></Li>

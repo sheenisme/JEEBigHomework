@@ -84,8 +84,8 @@ body{
 			<li><a href="${pageContext.request.contextPath}/CreateRepairOreders.jsp" target="rightFrame">&nbsp;&nbsp;我&nbsp;要&nbsp;报&nbsp;修&nbsp;&nbsp;</a></li>
 			<li><a href="${pageContext.request.contextPath}/CreateEvaluationRecord.jsp" target="rightFrame">评价此次维修</a></li>
 			<li><a href="ShowRepairOrders.jsp" target="rightFrame">查看我的维修</a></li>
-			<li><a href="ShowEvaluationRecord.jsp" target="rightFrame">查看我的评价</a></li>
-			<li><a href="ShowAllRepairOrders.jsp" target="rightFrame">查看所有维修</a></li>
+			<li><a href="${pageContext.request.contextPath}/user" target="rightFrame">查看我的评价</a></li>
+			<li><a href="${pageContext.request.contextPath}/user/showAllRepairOrders.action" target="rightFrame">查看所有维修</a></li>
 			<li><a href="ShowAllEvaluationRecord.jsp" target="rightFrame">查看所有评价</a></Li>
 			<li><a href="" target="rightFrame">查看统计信息</a></li>
 			<li><a href="ShowAllPcParts.jsp" target="rightFrame">查看配件信息</a></li>

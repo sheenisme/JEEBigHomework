@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="jee.com.core.dao.PcPartsDAO" >
+    <!-- 查询所有配件信息 -->
+    <select id="findAll" >
+    
+    </select>
+    
+    <!-- 添加新的配件 -->
+    <insert id="doCreate" parameterType="PcParts">
+    insert into pc_parts(
+    name
+	,type
+	,producer
+	,total
+	,remainder
+	,bid
+	,price
+	,remark
+    )values(
+    #{name}
+	,#{type}
+	,#{producer}
+	,#{total}
+	,#{remainder}
+	,#{bid}
+	,#{price}
+	,#{remark}
+    )
+    </insert>
+</mapper>

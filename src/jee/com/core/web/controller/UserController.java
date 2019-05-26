@@ -76,7 +76,6 @@ public class UserController {
 	 * 创建新用户
 	 */
 	@RequestMapping(value = "/register.action")
-	//@ResponseBody
 	public String userCreate(User user,Model model, HttpSession session) {
 	    // 执行Service层中的创建方法，返回的是受影响的行数
 		//System.out.println("创建新用户ing");
@@ -123,10 +122,27 @@ public class UserController {
 		if(rows > 0){
 			model.addAttribute("msg", "恭喜您，您的评价记录已提交！");
 		     // 返回到提示信息页面
-		return "message";
+			return "message";
 		}else{
 		    model.addAttribute("msg", "很遗憾，您的评价提交失败，请核对您输入的数据后重试！");
 		   // 返回到提示信息页面
+			return "message";
+		}
+	}
+	
+	/**
+	 * 查询所有的维修订单
+	 * @return 
+	 */
+	@RequestMapping(value = "/showAllRepairOrders.action")
+	public String showAllRepairOrders(Model model) {
+		List<RepairOrders> list=repairOrderService.showAll();
+		if(list!=null) {
+			model.addAttribute("list", list);
+			return "ShowAllRepairOrders";
+		}else {
+			model.addAttribute("msg", "恭喜您，查看所有维修信息失败！");
+		     // 返回到提示信息页面
 			return "message";
 		}
 	}

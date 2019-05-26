@@ -5,27 +5,50 @@ import java.sql.Timestamp;
 
 public class RepairReceipt implements Serializable{
 	private static final long serialVersionUID = 1L;
-	private int receiptId;
-	private String orderId;;
-	private int adminId;
-	private Timestamp repairTime;
-	private boolean needParts;
-	private String partsType;
+	private int receipt_id;
+	private String order_id;
+	private int admin_id;
+	private Timestamp repair_time;
+	private boolean need_parts;
+	private String parts_type;
 	private String resolvent;
 	private String advise;
 	private String remark;
-	
-	public boolean getNeedParts() {
-		return needParts;
+	public int getReceipt_id() {
+		return receipt_id;
 	}
-	public void setNeedParts(boolean needParts) {
-		this.needParts = needParts;
+	public void setReceipt_id(int receipt_id) {
+		this.receipt_id = receipt_id;
 	}
-	public String getPartsType() {
-		return partsType;
+	public String getOrder_id() {
+		return order_id;
 	}
-	public void setPartsType(String partsType) {
-		this.partsType = partsType;
+	public void setOrder_id(String order_id) {
+		this.order_id = order_id;
+	}
+	public int getAdmin_id() {
+		return admin_id;
+	}
+	public void setAdmin_id(int admin_id) {
+		this.admin_id = admin_id;
+	}
+	public Timestamp getRepair_time() {
+		return repair_time;
+	}
+	public void setRepair_time(Timestamp repair_time) {
+		this.repair_time = repair_time;
+	}
+	public boolean isNeed_parts() {
+		return need_parts;
+	}
+	public void setNeed_parts(boolean need_parts) {
+		this.need_parts = need_parts;
+	}
+	public String getParts_type() {
+		return parts_type;
+	}
+	public void setParts_type(String parts_type) {
+		this.parts_type = parts_type;
 	}
 	public String getResolvent() {
 		return resolvent;
@@ -45,29 +68,5 @@ public class RepairReceipt implements Serializable{
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
-	public int getReceiptId() {
-		return receiptId;
-	}
-	public void setReceiptId(int receiptId) {
-		this.receiptId = receiptId;
-	}
-	public String getOrderId() {
-		return orderId;
-	}
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-	public int getAdminId() {
-		return adminId;
-	}
-	public void setAdminId(int adminId) {
-		this.adminId = adminId;
-	}
-	public Timestamp getRepairTime() {
-		return repairTime;
-	}
-	public void setRepairTime(Timestamp repairTime) {
-		this.repairTime = repairTime;
-	}
-
+	
 }
