@@ -141,7 +141,7 @@ public class UserController {
 			model.addAttribute("list", list);
 			return "ShowAllRepairOrders";
 		}else {
-			model.addAttribute("msg", "恭喜您，查看所有维修信息失败！");
+			model.addAttribute("msg", "很遗憾，查看所有维修信息失败！");
 		     // 返回到提示信息页面
 			return "message";
 		}

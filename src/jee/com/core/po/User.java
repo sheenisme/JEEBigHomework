@@ -7,7 +7,7 @@ import java.io.Serializable;
 public class User implements Serializable{
 	private static final long serialVersionUID=1L;
 	private int id;
-	private String loginname;
+	private String login_name;
 	private String password;
 	private String name;
 	private String sex;
@@ -24,12 +24,6 @@ public class User implements Serializable{
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public String getLoginname() {
-		return loginname;
-	}
-	public void setLoginname(String loginname) {
-		this.loginname = loginname;
 	}
 	public String getPassword() {
 		return password;
@@ -96,5 +90,11 @@ public class User implements Serializable{
 	}
 	public void setSex(String sex) {
 		this.sex = sex;
+	}
+	public String getLogin_name() {
+		return login_name;
+	}
+	public void setLogin_name(String login_name) {
+		this.login_name = login_name;
 	}
 }

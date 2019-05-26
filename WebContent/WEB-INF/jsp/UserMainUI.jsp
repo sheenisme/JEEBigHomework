@@ -70,7 +70,7 @@ body{
 			<%
 				User u=(User)request.getSession().getAttribute("USER_SESSION"); 
 			%> 
-			<li class="disabled" ><a><%=u.getLoginname() %>用户</a></li>
+			<li class="disabled" ><a><%=u.getLogin_name() %>用户</a></li>
 			<li ><a href="${pageContext.request.contextPath}/user/logout.action">退出登录</a></li>		
 		</ul>
 		<script src="./js/bootstrap.min.js"></script>

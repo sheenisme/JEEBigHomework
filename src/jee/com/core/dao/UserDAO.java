@@ -11,7 +11,7 @@ public interface UserDAO  extends DAO<User, Integer> {
 	 * @return Custom对象列表
 	 * @throws Exception
 	 */
-	public List<User> findByName(@Param("loginname") String loginnname)throws Exception;
+	public List<User> findByName(@Param("login_name") String login_name)throws Exception;
 	/**
 	 * 根据邮箱查询指定管理员对象
 	 * @param email 要查询的邮箱

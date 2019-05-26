@@ -40,4 +40,15 @@ public class UserServiceImpl implements UserService{
 		}
 		return -1;
 	}
+
+	@Override
+	public List<User> findAll() {
+		try {
+			return this.userdao.findAll();
+		} catch (Exception e) {
+			System.out.println("UserServiceImpl类的findAll()出现Exception!");
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

@@ -8,7 +8,6 @@
 <title>显示所有回执信息</title>
 </head>
 <body>
-	<%@ page import="java.sql.*,java.util.*,weiyi.dao.*,weiyi.dao.vo.*,weiyi.dao.factory.*" %>
 	<div class="container">
 	<table id="table" class="table table-condensed" align="center">
 	<thead>
@@ -25,31 +24,12 @@
 		<td>备注信息  </td>
 	</tr>
 	</thead>
-<%
-request.setCharacterEncoding("utf-8");
-response.setCharacterEncoding("utf-8");
-IDAO<RepairReceipt,Integer> dao=DAOFactory.getRepairReceipt();
-List<RepairReceipt> list = dao.findAll();
-for(int i=0;i<list.size();i++){
-	RepairReceipt vo=list.get(i);
-%>
 	<tbody>
 	<tr class="active">
-		<td><%=i+1 %></td>
-		<td><%=vo.getReceiptId() %></td>
-		<td><%=vo.getOrderId().toString() %></td>
-		<td><%=vo.getAdminId() %></td>
-		<td><%=vo.getRepairTime() %></td>
-		<td><%=vo.getNeedParts() %></td>
-		<td><%=vo.getPartsType().toString() %></td>
-		<td><%=vo.getResolvent().toString() %></td>
-		<td><%=vo.getAdvise().toString() %></td>
-		<td><%=vo.getRemark().toString() %></td>
+		<td></td>
 	</tr>
 	</tbody>
-<% 
-}
-%>
+
 	</table>
 	</div>
 </body>

@@ -5,37 +5,30 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="./css/bootstrap.min.css" />
-<title>显示所有的评价记录</title>
+<title>显示所有配件的基本信息</title>
 </head>
 <body>
-	<%@ page import="java.sql.*,java.util.*,weiyi.dao.*,weiyi.dao.vo.*,weiyi.dao.factory.*" %>
 	<div class="container">
 	<table id="table" class="table table-condensed" align="center">
 	<thead>
 	<tr class="active">
-		<td>反馈编号  </td>
-		<td>反馈者姓名   </td>
-		<td>反馈者邮箱  </td>
-		<td>反馈主题  </td>
-		<td>详细内容  </td>
+		<td> 序   号   </td>
+		<td>配件编号  </td>
+		<td>配件名字  </td>
+		<td>配件类型  </td>
+		<td> 生厂商   </td>
+		<td>配件总量  </td>
+		<td>配件余量  </td>
+		<td>配件售价  </td>
+		<td>备注信息  </td>
 	</tr>
 	</thead>
-<%
-for(int i=0;i<${list.size};i++){
-	Feedback vo=list.get(i);
-%>
 	<tbody>
 	<tr class="active">
-		<td><%=vo.getId() %></td>
-		<td><%=vo.getLinkName().toString() %></td>
-		<td><%=vo.getLinkEmail().toString()%></td>
-		<td><%=vo.getTheme().toString() %></td>
-		<td><%=vo.getDescription().toString() %></td>
+		<td></td>
+		<td></td>
 	</tr>
 	</tbody>
-<% 
-}
-%>
 	</table>
 	</div>
 </body>

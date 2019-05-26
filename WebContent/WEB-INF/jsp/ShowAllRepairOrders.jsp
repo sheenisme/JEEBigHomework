@@ -6,8 +6,6 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css" />
 	<title>显示所有的维修记录</title>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-1.11.3.min.js">
-	</script>
 </head>
 <body>
 	<div class="container">

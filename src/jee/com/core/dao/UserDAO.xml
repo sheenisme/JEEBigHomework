@@ -6,11 +6,18 @@
     <select id="findByName" parameterType="String" resultType="User">
 	    select *
 	    from user
-	    where loginname = #{loginname}
+	    where login_name = #{login_name}
     </select>
+    
+    <!-- 查询所有用户 -->
+    <select id="findAll" resultType="User">
+	    select *
+	    from user
+    </select>
+    
     <!-- 添加客户 -->
     <insert id="doCreate" parameterType="User">
-    	insert into user( loginname,
+    	insert into user( login_name,
     	password,
     	name,
     	sex,
@@ -22,7 +29,7 @@
    		point,
    		unit,
    		remark
-    	)values( #{loginname},
+    	)values( #{login_name},
     	#{password},
     	#{name},
     	#{sex},

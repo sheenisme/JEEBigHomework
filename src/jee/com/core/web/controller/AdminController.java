@@ -12,10 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import jee.com.core.po.Admin;
 import jee.com.core.po.PcParts;
+import jee.com.core.po.RepairOrders;
 import jee.com.core.po.RepairReceipt;
+import jee.com.core.po.User;
 import jee.com.core.service.AdminService;
 import jee.com.core.service.PcPartsService;
+import jee.com.core.service.RepairOrdersService;
 import jee.com.core.service.RepairReceiptService;
+import jee.com.core.service.UserService;
 
 
 /**
@@ -56,6 +60,23 @@ public class AdminController {
 		model.addAttribute("msg", "账号或密码错误，请重新输入！");
          // 返回到登录页面
 		return "AdminLogin";
+	}
+	/**
+	 * 退出登录
+	 */
+	@RequestMapping(value = "/logout.action")
+	public String logout(HttpSession session) {
+	    // 清除Session
+	    session.invalidate();
+	    // 重定向到登录页面的跳转方法
+	    return "redirect:login.action";
+	}
+	/**
+	 * 向登陆页面跳转
+	 */
+	@RequestMapping(value = "/login.action", method = RequestMethod.GET)
+	public String toLogin() {
+	    return "AdminLogin";
 	}
 	
 	/**
@@ -123,20 +144,42 @@ public class AdminController {
 	}	
 	
 	/**
-	 * 退出登录
+	 * 查看所有用户的信息
 	 */
-	@RequestMapping(value = "/logout.action")
-	public String logout(HttpSession session) {
-	    // 清除Session
-	    session.invalidate();
-	    // 重定向到登录页面的跳转方法
-	    return "redirect:login.action";
-	}
+	//依赖注入服务
+	@Autowired
+	private UserService userService;
+	@RequestMapping(value = "/showAllUser.action")
+	public String ShowAllUser(Model model) {
+		// 执行Service层中的创建方法，返回的是结果集
+		List<User> list = userService.findAll();
+		if(list !=null){
+		  model.addAttribute("list",list);
+		  // 返回到显示页面
+		  return "ShowAllUser";
+		}else{
+			model.addAttribute("msg", "很遗憾，查看用户信息失败，请返回后重试！！");
+			// 返回到提示信息页面
+			return "message";
+		}
+	}	
+	
 	/**
-	 * 向登陆页面跳转
+	 * 查询所有的维修订单
+	 * @return 
 	 */
-	@RequestMapping(value = "/login.action", method = RequestMethod.GET)
-	public String toLogin() {
-	    return "AdminLogin";
+	@Autowired
+	private RepairOrdersService repairOrderService;
+	@RequestMapping(value = "/showAllRepairOrders.action")
+	public String showAllRepairOrders(Model model) {
+		List<RepairOrders> list=repairOrderService.showAll();
+		if(list!=null) {
+			model.addAttribute("list", list);
+			return "ShowAllRepairOrders";
+		}else {
+			model.addAttribute("msg", "很遗憾，查看所有维修信息失败！");
+		     // 返回到提示信息页面
+			return "message";
+		}
 	}
 }
