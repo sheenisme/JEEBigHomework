@@ -4,8 +4,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>找回密码</title>
-	<link rel="stylesheet" href="./css/form.css" />
-	<script type="text/javascript" src="js/Check.js">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/form.css" />
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/Check.js">
 	</script>
 </head>
 <body>

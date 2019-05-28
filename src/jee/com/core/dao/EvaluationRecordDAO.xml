@@ -25,4 +25,9 @@
 	<select id="findAll" resultType="EvaluationRecord">
 	select * from evaluation_record
 	</select>
+	
+	<!-- 查看某个客户的评价记录  -->
+	<select id="findByUserId" resultType="EvaluationRecord" parameterType="Integer">
+	select * from evaluation_record where user_id=#{id}
+	</select>
 </mapper>

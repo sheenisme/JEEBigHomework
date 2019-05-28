@@ -10,10 +10,8 @@ import jee.com.core.po.RepairReceipt;
  */
 public interface RepairReceiptDAO extends DAO<RepairReceipt, Integer> {
 	/**
-	 * 通过客户ID返回其已经回执的ID
-	 * @param id 客户id
-	 * @return 已经回执了的订单号
+	 * 通过客户ID返回其已经回执的
 	 * @throws Exception
 	 */
-	public List<String> findOrderId(Integer id) throws Exception;
+	public List<RepairReceipt> findByUserId(Integer id) throws Exception;
 }

@@ -128,6 +128,26 @@ public class AdminController {
 	    }
 	}
 	
+	
+	/**
+	* 创建新的维修回执前的预备工作
+	*/
+	//依赖注入服务
+	@Autowired
+	private RepairOrdersService repairOrderService;
+	
+	@RequestMapping(value = "/preCreateRepairReceipt.action")
+	public String GetOrderIdForReceipt(Model model) {
+		List<RepairOrders> list = repairOrderService.showAllRepairOrders();
+		if(list!=null) {
+			model.addAttribute("list", list);
+			return "CreateRepairReceipt";
+		}else {
+			model.addAttribute("msg", "很遗憾，创建您的回执信息前的获取已回执的信息失败！");
+		     // 返回到提示信息页面
+			return "message";
+		}
+	}
 	/**
 	 * 添加维修回执单
 	 */
@@ -185,6 +205,24 @@ public class AdminController {
 	}
 	
 	/**
+	 * 修改配件信息
+	 */
+	@RequestMapping(value = "/revisePcParts.action")
+	public String RevisePcParts(PcParts pcParts,Model model,HttpServletResponse response) {
+	    // 执行Service层中的创建方法，返回的是受影响的行数
+	    int rows = pcPartsService.reviserPcParts(pcParts);
+	    if(rows > 0){
+	    	model.addAttribute("msg", "恭喜您，修改配件信息成功！");
+	         // 返回到提示信息页面
+	    	return "message";
+	    }else{
+	    	model.addAttribute("msg", "很遗憾，修改配件信息失败，请重试！！");
+	         // 返回到提示信息页面
+			return "message";
+	    }
+	}
+	
+	/**
 	 * 查看所有用户的信息
 	 */
 	//依赖注入服务
@@ -209,8 +247,6 @@ public class AdminController {
 	 * 查询所有的维修订单
 	 * @return 
 	 */
-	@Autowired
-	private RepairOrdersService repairOrderService;
 	@RequestMapping(value = "/showAllRepairOrders.action")
 	public String showAllRepairOrders(Model model) {
 		List<RepairOrders> list=repairOrderService.showAllRepairOrders();

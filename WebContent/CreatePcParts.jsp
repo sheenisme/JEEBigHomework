@@ -11,25 +11,29 @@
 <body>
 	<div class="container">
 		<form  action="${pageContext.request.contextPath}/admin/createPcParts.action" method="post">
-			<div class="form-group">
-				<input type="hidden" name="action" value="CreatePcParts"> 
-				<label style="font-size: 18px;font-weight: 50;text-align: center;">配件名字</label>
-				<input class="form-control" type="text" style="width:50%" name="name">
-				<label style="font-size: 18px;font-weight: 50;text-align: center;">配件类型</label>
-				<input class="form-control" type="text" style="width:50%" name="type">
-				<label style="font-size: 18px;font-weight: 50;text-align: center;">生产商</label>
-				<input class="form-control" type="text" style="width:50%" name="producer">
-				<label style="font-size: 18px;font-weight: 50;text-align: center;">总量</label>
-				<input class="form-control" type="text" style="width:50%" name="total">
-				<label style="font-size: 18px;font-weight: 50;text-align: center;">余量</label>
-				<input class="form-control" type="text" style="width:50%" name="remainder">
-				<label style="font-size: 18px;font-weight: 50;text-align: center;">进价</label>
-				<input class="form-control" type="text" style="width:50%" name="bid">
-				<label style="font-size: 18px;font-weight: 50;text-align: center;">售价</label>
-        		<input class="form-control" type="text" style="width:50%" name="price">
-				<label style="font-size: 18px;font-weight: 50;text-align: center;">备注：</label>
-				<input class="form-control" type="text" style="width:50%" name="remark">
-				<input class="btn btn-primary  active" type="submit" value=" 确认录入  ">
+		<div class="box">
+				<div id="register_box">
+					<div class="form-group">
+						<input type="hidden" name="action" value="CreatePcParts"> 
+						<label style="font-size: 18px;font-weight: 50;text-align: center;">配件名字</label>
+						<input class="form-control" type="text" style="width:50%" name="name">
+						<label style="font-size: 18px;font-weight: 50;text-align: center;">配件类型</label>
+						<input class="form-control" type="text" style="width:50%" name="type">
+						<label style="font-size: 18px;font-weight: 50;text-align: center;">生产商</label>
+						<input class="form-control" type="text" style="width:50%" name="producer">
+						<label style="font-size: 18px;font-weight: 50;text-align: center;">总量</label>
+						<input class="form-control" type="text" style="width:50%" name="total">
+						<label style="font-size: 18px;font-weight: 50;text-align: center;">余量</label>
+						<input class="form-control" type="text" style="width:50%" name="remainder">
+						<label style="font-size: 18px;font-weight: 50;text-align: center;">进价</label>
+						<input class="form-control" type="text" style="width:50%" name="bid">
+						<label style="font-size: 18px;font-weight: 50;text-align: center;">售价</label>
+        				<input class="form-control" type="text" style="width:50%" name="price">
+						<label style="font-size: 18px;font-weight: 50;text-align: center;">备注：</label>
+						<input class="form-control" type="text" style="width:50%" name="remark">
+						<input class="btn btn-primary  active" type="submit" value=" 确认录入  ">
+					</div>
+				</div>
 			</div>
 		</form>
 	</div>

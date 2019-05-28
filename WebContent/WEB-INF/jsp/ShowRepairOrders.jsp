@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,7 +12,6 @@
 	<table id="table" class="table table-condensed" align="center">
 	<thead>
 	<tr class="active">
-		<td>  序 号   </td>
 		<td>维修单号  </td>
 		<td>我的ID  </td>
 		<td>报修时间  </td>
@@ -25,12 +24,22 @@
 		<td>备注信息  </td>
 	</tr>
 	</thead>
+	<c:forEach items="${list}" var="data">
 	<tbody>
 	<tr class="active">
-		<td></td>
-		
+		<td><c:out value="${data.order_id}"/></td>
+		<td><c:out value="${data.custom_id}"/></td>
+		<td><c:out value="${data.apply_time}"/></td>
+		<td><c:out value="${data.link_name}"/></td>
+		<td><c:out value="${data.link_phone}"/></td>
+		<td><c:out value="${data.link_address}"/></td>
+		<td><c:out value="${data.repair_time}"/></td>
+		<td><c:out value="${data.type}"/></td>
+		<td><c:out value="${data.description}"/></td>
+		<td><c:out value="${data.remark}"/></td>
 	</tr>
 	</tbody>
+	</c:forEach>
 	</table>
 	</div>
 </body>

@@ -30,4 +30,17 @@
 	,#{remark}
     )
     </insert>
+    
+    <update id="doUpdate" parameterType="PcParts">
+    update pc_parts set 
+    	name = #{name}
+		,type = #{type}
+		,producer = #{producer}
+		,total = #{total}
+		,remainder = #{remainder}
+		,bid = #{bid}
+		,price = #{price}
+		,remark = #{remark}
+    where id = #{id}
+    </update>
 </mapper>

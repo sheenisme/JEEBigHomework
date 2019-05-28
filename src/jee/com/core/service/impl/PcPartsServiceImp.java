@@ -1,7 +1,6 @@
 package jee.com.core.service.impl;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,6 +34,17 @@ public class PcPartsServiceImp implements PcPartsService{
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	@Override
+	public int reviserPcParts(PcParts po) {
+		try {
+			return dao.doUpdate(po);
+		} catch (Exception e) {
+			System.out.println("修改配件出现异常。");
+			e.printStackTrace();
+		}
+		return -1;
 	}
 
 }

@@ -33,4 +33,9 @@
 	,#{remark}
 	) 
 	</insert>
+	
+	<!-- 查看某个客户的维修记录  -->
+	<select id="findByUserId" resultType="RepairOrders" parameterType="Integer">
+		select * from repair_orders where custom_id = #{id}
+	</select>
 </mapper>

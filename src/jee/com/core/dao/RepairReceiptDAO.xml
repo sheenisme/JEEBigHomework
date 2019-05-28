@@ -5,7 +5,8 @@
 	<!-- 添加维修回执单 -->
 	<insert id="doCreate" parameterType="RepairReceipt">
 	insert into repair_receipt (
-	admin_id
+	order_id
+	,admin_id
 	,repair_time
 	,need_parts
 	,parts_type
@@ -13,7 +14,8 @@
 	,advise
 	,remark
 	)values(
-	#{admin_id}
+	#{order_id}
+	,#{admin_id}
 	,#{repair_time}
 	,#{need_parts}
 	,#{parts_type}
@@ -26,4 +28,12 @@
 	<select id="findAll" resultType="RepairReceipt">
 	select * from repair_receipt
 	</select>
+	
+	<!-- 查看某个客户的回执记录  -->
+	<select id="findByUserId" resultType="RepairReceipt" parameterType="Integer">
+		select * from repair_receipt 
+			where order_id in  
+				(select order_id from repair_orders where custom_id=#{id})
+	</select>
+	
 </mapper>

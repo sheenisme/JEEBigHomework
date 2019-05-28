@@ -34,4 +34,14 @@ public class RepairOrdersServiceImp implements RepairOrdersService{
 		}
 		return null;
 	}
+
+	@Override
+	public List<RepairOrders> showMyRepairOrders(Integer id) {
+		try {
+			return dao.findByUserId(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

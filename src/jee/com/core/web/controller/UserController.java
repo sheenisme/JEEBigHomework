@@ -14,10 +14,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import jee.com.core.po.EvaluationRecord;
 import jee.com.core.po.PcParts;
 import jee.com.core.po.RepairOrders;
+import jee.com.core.po.RepairReceipt;
 import jee.com.core.po.User;
 import jee.com.core.service.EvaluationRecordService;
 import jee.com.core.service.PcPartsService;
 import jee.com.core.service.RepairOrdersService;
+import jee.com.core.service.RepairReceiptService;
 import jee.com.core.service.UserService;
 import jee.com.core.service.impl.MakeOrderNum;
 
@@ -145,11 +147,12 @@ public class UserController {
 	    }
 	}
 	
-	@Autowired
-	private RepairOrdersService repairOrderService;
+	
 	/**
 	 * 创建维修订单
 	 */
+	@Autowired
+	private RepairOrdersService repairOrderService;
 	@RequestMapping(value = "/createRepairOrders.action")
 	public String createRepairOrders(RepairOrders po,Model model) {
 		
@@ -166,12 +169,35 @@ public class UserController {
 			return "message";
 	    }
 	}
-	    
+	
+	/**
+	* 创建新的评价记录的预备工作
+	*/
+	//依赖注入服务
+	@Autowired
+	private RepairReceiptService repairReceiptservice;
+	@RequestMapping(value = "/perCreateEvaluationRecord.action",method = RequestMethod.GET)
+	public String GetOrderIdForEvaluation(Integer id,Model model) {
+		List<RepairReceipt> list = repairReceiptservice.showMyRepairReceipt(id);
+		if(list!=null) {
+			model.addAttribute("list", list);
+			return "CreateEvaluationRecord";
+		}else {
+			model.addAttribute("msg", "很遗憾，创建您的评价信息前的获取已回执的信息失败！");
+		     // 返回到提示信息页面
+			return "message";
+		}
+	}
+	
+	
+	/**
+	 * 创建新的评价
+	 * @param po
+	 * @param model
+	 * @return
+	 */
 	@Autowired
 	private EvaluationRecordService evaluationRecordService;
-	/**
-	* 创建新的评价记录
-	*/
 	@RequestMapping(value = "/createEvaluationRecord.action")
 	public String createEvaluationRecord(EvaluationRecord po,Model model) {			
 		int rows = evaluationRecordService.createEvaluationRecord(po);
@@ -182,6 +208,23 @@ public class UserController {
 		}else{
 		    model.addAttribute("msg", "很遗憾，您的评价提交失败，请核对您输入的数据后重试！");
 		   // 返回到提示信息页面
+			return "message";
+		}
+	}
+	
+	/**
+	 * 查询某人的维修订单
+	 * @return 
+	 */
+	@RequestMapping(value = "/showRepairOrders.action", method = RequestMethod.GET)
+	public String showRepairOrders(Integer id,Model model) {
+		List<RepairOrders> list=repairOrderService.showMyRepairOrders(id);
+		if(list!=null) {
+			model.addAttribute("list", list);
+			return "ShowRepairOrders";
+		}else {
+			model.addAttribute("msg", "很遗憾，查看您的维修信息失败！");
+		     // 返回到提示信息页面
 			return "message";
 		}
 	}
@@ -198,6 +241,23 @@ public class UserController {
 			return "ShowAllRepairOrders";
 		}else {
 			model.addAttribute("msg", "很遗憾，查看所有维修信息失败！");
+		     // 返回到提示信息页面
+			return "message";
+		}
+	}
+	
+	/**
+	 * 查询某用户的评价
+	 * @return 
+	 */
+	@RequestMapping(value = "/showEvaluationRecord.action", method = RequestMethod.GET)
+	public String showEvaluationRecord(Integer id,Model model) {
+		List<EvaluationRecord> list=evaluationRecordService.showMyEvaluationRecord(id);
+		if(list!=null) {
+			model.addAttribute("list", list);
+			return "ShowEvaluationRecord";
+		}else {
+			model.addAttribute("msg", "很遗憾，查看您的评价信息失败！");
 		     // 返回到提示信息页面
 			return "message";
 		}
@@ -237,4 +297,5 @@ public class UserController {
 			return "message";
 		}
 	}
+	
 }

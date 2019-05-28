@@ -7,4 +7,5 @@ import jee.com.core.po.PcParts;
 public interface PcPartsService {
 	public int CreatePcParts(PcParts po);
 	public List<PcParts> showAllPcParts();
+	public int reviserPcParts(PcParts po);
 }

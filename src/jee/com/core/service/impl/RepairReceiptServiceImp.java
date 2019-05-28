@@ -36,4 +36,14 @@ public class RepairReceiptServiceImp implements RepairReceiptService{
 		}
 		return null;
 	}
+
+	@Override
+	public List<RepairReceipt> showMyRepairReceipt(Integer id) {
+		try {
+			return dao.findByUserId(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

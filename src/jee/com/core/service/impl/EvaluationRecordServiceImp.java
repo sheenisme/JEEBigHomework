@@ -37,4 +37,14 @@ public class EvaluationRecordServiceImp implements EvaluationRecordService{
 		return null;
 	}
 
+	@Override
+	public List<EvaluationRecord> showMyEvaluationRecord(Integer id) {
+		try {
+			return dao.findByUserId(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 }

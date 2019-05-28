@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -22,10 +22,17 @@
 	</tr>
 	</thead>
 	<tbody>
+	<c:forEach items="${list}" var="data">
 	<tr class="active">
-		<td></td>
-		
+		<td><c:out value="${data.evaluate_id}"/></td>
+		<td><c:out value="${data.order_id}"/></td>
+		<td><c:out value="${data.user_id}"/></td>
+		<td><c:out value="${data.date}"/></td>
+		<td><c:out value="${data.level}"/></td>
+		<td><c:out value="${data.context}"/></td>
+		<td><c:out value="${data.remark}"/></td>
 	</tr>
+	</c:forEach>
 	</tbody>
 	</table>
 	</div>

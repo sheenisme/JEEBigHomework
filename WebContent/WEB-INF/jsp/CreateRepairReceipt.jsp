@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,7 +19,9 @@
 				<label style="font-size: 18px;font-weight: 50;text-align: center;">请选择维修单号:</label>
 				<br>
 				<select name="order_id">
-					<option value="1">1</option>
+					<c:forEach items="${list}" var="data">
+					<option value="<c:out value="${data.order_id}"/>"><c:out value="${data.order_id}"/></option>
+					</c:forEach>
 				</select>
 				<br>
 				<input type="hidden" name="admin_id" value="<%=u.getId()%>">

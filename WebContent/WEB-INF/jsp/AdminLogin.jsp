@@ -52,7 +52,7 @@ if(cookies!=null){
 			</div>
 			<br>
 			<div>
-				<pre>jee 服务系统-管理员登录页面!    <a href="foundmm.jsp">找回密码</a></pre>
+				<pre>jee 服务系统-管理员登录页面!    <a href="${pageContext.request.contextPath}/foundmm.jsp">找回密码</a></pre>
 			</div> 
 		</div>
 	</div>
