@@ -4,8 +4,8 @@
 <mapper namespace="jee.com.core.dao.FeedbackDAO" >
     <!-- 查询所有反馈信息 -->
     <select id="findAll" resultType="Feedback">
-    	select *
-    	from feedback 
+    	SELECT * 
+    	FROM `feedback`
     </select>
     
     <!-- 插入信息的反馈信息 -->

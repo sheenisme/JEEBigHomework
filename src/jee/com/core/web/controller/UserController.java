@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import jee.com.core.po.EvaluationRecord;
+import jee.com.core.po.PcParts;
 import jee.com.core.po.RepairOrders;
 import jee.com.core.po.User;
 import jee.com.core.service.EvaluationRecordService;
+import jee.com.core.service.PcPartsService;
 import jee.com.core.service.RepairOrdersService;
 import jee.com.core.service.UserService;
 import jee.com.core.service.impl.MakeOrderNum;
@@ -70,6 +72,60 @@ public class UserController {
 		model.addAttribute("msg", "账号或密码错误，请重新输入！");
          // 返回到登录页面
 		return "UserLogin";
+	}
+	
+	/**
+	 * 退出登录
+	 */
+	@RequestMapping(value = "/logout.action")
+	public String logout(HttpSession session) {
+	    // 清除Session
+	    session.invalidate();
+	    // 重定向到登录页面的跳转方法
+	    return "redirect:login.action";
+	}
+	
+	/**
+	 * 向用户登陆页面跳转
+	 */
+	@RequestMapping(value = "/login.action", method = RequestMethod.GET)
+	public String toLogin() {
+	    return "UserLogin";
+	}
+	
+	/**
+	 * 修改用户个人信息前获取预备信息
+	 */
+	@RequestMapping(value = "/preReviseUser.action", method = RequestMethod.GET)
+	public String PreReviseUser(Integer id,Model model) {
+	    // 执行Service层中的创建方法，返回的是
+	    User vo =  userService.findUserById(id);
+	    if(vo != null){
+	    	model.addAttribute("vo", vo);
+	    	return "ReviseUser";		
+	    }else{
+	    	model.addAttribute("msg", "很遗憾，更新管理员前的获取管理员信息失败，请返回后重试！！");
+	         // 返回到提示信息页面
+	    	return "message";
+	    }
+	}
+	
+	/**
+	 * 修改管理员信息
+	 */
+	@RequestMapping(value = "/reviseUser.action")
+	public String ReviseUser(User user,Model model,HttpServletResponse response) {
+	    // 执行Service层中的创建方法，返回的是受影响的行数
+	    int rows = userService.reviseUser(user);
+	    if(rows > 0){
+	    	model.addAttribute("msg", "恭喜您，修改您的用户信息成功！退出后重新登陆生效！");
+	         // 返回到提示信息页面
+	    	return "message";
+	    }else{
+	    	model.addAttribute("msg", "很遗憾，修改您的用户信息失败，请返回后重试！！");
+	         // 返回到提示信息页面
+			return "message";
+	    }
 	}
 	
 	/**
@@ -136,7 +192,7 @@ public class UserController {
 	 */
 	@RequestMapping(value = "/showAllRepairOrders.action")
 	public String showAllRepairOrders(Model model) {
-		List<RepairOrders> list=repairOrderService.showAll();
+		List<RepairOrders> list=repairOrderService.showAllRepairOrders();
 		if(list!=null) {
 			model.addAttribute("list", list);
 			return "ShowAllRepairOrders";
@@ -148,21 +204,37 @@ public class UserController {
 	}
 	
 	/**
-	 * 退出登录
+	 * 查询所有的评价
+	 * @return 
 	 */
-	@RequestMapping(value = "/logout.action")
-	public String logout(HttpSession session) {
-	    // 清除Session
-	    session.invalidate();
-	    // 重定向到登录页面的跳转方法
-	    return "redirect:login.action";
+	@RequestMapping(value = "/showAllEvaluationRecord.action")
+	public String showAllEvaluationRecord(Model model) {
+		List<EvaluationRecord> list=evaluationRecordService.showAllEvaluationRecord();
+		if(list!=null) {
+			model.addAttribute("list", list);
+			return "ShowAllEvaluationRecord";
+		}else {
+			model.addAttribute("msg", "很遗憾，查看所有评价信息失败！");
+		     // 返回到提示信息页面
+			return "message";
+		}
 	}
 	
 	/**
-	 * 向用户登陆页面跳转
+	 * 查看所有的配件信息
 	 */
-	@RequestMapping(value = "/login.action", method = RequestMethod.GET)
-	public String toLogin() {
-	    return "UserLogin";
+	@Autowired
+	private PcPartsService pcPartsService;
+	@RequestMapping( "/showAllPcParts.action")
+	public String ShowAllPcParts(Model model) {
+		List<PcParts> list= pcPartsService.showAllPcParts();
+		if(list!=null) {
+			model.addAttribute("list", list);
+			return "ShowAllPcParts";
+		}else {
+			model.addAttribute("msg", "很遗憾，查看配件信息失败！");
+		     // 返回到提示信息页面
+			return "message";
+		}
 	}
 }

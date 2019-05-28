@@ -51,4 +51,26 @@ public class UserServiceImpl implements UserService{
 		}
 		return null;
 	}
+
+	@Override
+	public User findUserById(Integer id) {
+		try {
+			return this.userdao.findById(id);
+		} catch (Exception e) {
+			System.out.println("UserServiceImpl类的findById()出现Exception!");
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public int reviseUser(User po) {
+		try {
+			return userdao.doUpdate(po);
+		} catch (Exception e) {
+			System.out.println("修改管理员出现异常。");
+			e.printStackTrace();
+		}
+		return -1;
+	}
 }

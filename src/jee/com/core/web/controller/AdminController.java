@@ -1,5 +1,6 @@
 package jee.com.core.web.controller;
 
+
 import java.util.List;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -10,12 +11,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 import jee.com.core.po.Admin;
+import jee.com.core.po.EvaluationRecord;
+import jee.com.core.po.Feedback;
 import jee.com.core.po.PcParts;
 import jee.com.core.po.RepairOrders;
 import jee.com.core.po.RepairReceipt;
 import jee.com.core.po.User;
 import jee.com.core.service.AdminService;
+import jee.com.core.service.EvaluationRecordService;
+import jee.com.core.service.FeedbackService;
 import jee.com.core.service.PcPartsService;
 import jee.com.core.service.RepairOrdersService;
 import jee.com.core.service.RepairReceiptService;
@@ -61,6 +67,7 @@ public class AdminController {
          // 返回到登录页面
 		return "AdminLogin";
 	}
+	
 	/**
 	 * 退出登录
 	 */
@@ -106,7 +113,6 @@ public class AdminController {
 	//依赖注入服务
 	@Autowired
 	private PcPartsService pcPartservice;
-	
 	@RequestMapping(value = "/createPcParts.action")
 	public String CreatePcParts(PcParts pcparts,Model model) {
 	    // 执行Service层中的创建方法，返回的是受影响的行数
@@ -144,6 +150,41 @@ public class AdminController {
 	}	
 	
 	/**
+	 * 修改管理员前预备获取信息
+	 */
+	@RequestMapping(value = "/preReviseAdmin.action", method = RequestMethod.GET)
+	public String PreReviseAdmin(Integer id,Model model) {
+	    // 执行Service层中的创建方法，返回的是
+	    Admin vo =  adminService.findAdminById(id);
+	    if(vo != null){
+	    	model.addAttribute("vo", vo);
+	    	return "ReviseAdmin";		
+	    }else{
+	    	model.addAttribute("msg", "很遗憾，更新管理员前的获取管理员信息失败，请返回后重试！！");
+	         // 返回到提示信息页面
+	    	return "message";
+	    }
+	}
+	
+	/**
+	 * 修改管理员信息
+	 */
+	@RequestMapping(value = "/reviseAdmin.action")
+	public String ReviseAdmin(Admin admin,Model model,HttpServletResponse response) {
+	    // 执行Service层中的创建方法，返回的是受影响的行数
+	    int rows = adminService.ReviseAdmin(admin);
+	    if(rows > 0){
+	    	model.addAttribute("msg", "恭喜您，修改您的管理员信息成功！退出后重新登陆生效！");
+	         // 返回到提示信息页面
+	    	return "message";
+	    }else{
+	    	model.addAttribute("msg", "很遗憾，修改您的管理员信息失败，请返回后重试！！");
+	         // 返回到提示信息页面
+			return "message";
+	    }
+	}
+	
+	/**
 	 * 查看所有用户的信息
 	 */
 	//依赖注入服务
@@ -172,12 +213,83 @@ public class AdminController {
 	private RepairOrdersService repairOrderService;
 	@RequestMapping(value = "/showAllRepairOrders.action")
 	public String showAllRepairOrders(Model model) {
-		List<RepairOrders> list=repairOrderService.showAll();
+		List<RepairOrders> list=repairOrderService.showAllRepairOrders();
 		if(list!=null) {
 			model.addAttribute("list", list);
 			return "ShowAllRepairOrders";
 		}else {
 			model.addAttribute("msg", "很遗憾，查看所有维修信息失败！");
+		     // 返回到提示信息页面
+			return "message";
+		}
+	}
+	
+	/**
+	 * 查询所有的评价
+	 * @return 
+	 */
+	@Autowired
+	private EvaluationRecordService evaluationRecordService;
+	@RequestMapping(value = "/showAllEvaluationRecord.action")
+	public String showAllEvaluationRecord(Model model) {
+		List<EvaluationRecord> list=evaluationRecordService.showAllEvaluationRecord();
+		if(list!=null) {
+			model.addAttribute("list", list);
+			return "ShowAllEvaluationRecord";
+		}else {
+			model.addAttribute("msg", "很遗憾，查看所有评价信息失败！");
+		     // 返回到提示信息页面
+			return "message";
+		}
+	}
+	
+	/**
+	 * 查看所有反馈信息
+	 */
+	@Autowired
+	private FeedbackService feedbackService;
+	@RequestMapping( "/showAllFeedback.action")
+	public String ShowAllFeedback(Model model) {
+		List<Feedback> list=feedbackService.showAllFeedback();
+		if(list!=null) {
+			model.addAttribute("list", list);
+			return "ShowAllFeedback";
+		}else {
+			model.addAttribute("msg", "很遗憾，查看所有反馈信息失败！");
+		     // 返回到提示信息页面
+			return "message";
+		}
+	}
+	
+	/**
+	 * 显示所有的回执信息
+	 */
+	@RequestMapping( "/showAllRepairReceipt.action")
+	public String ShowAllRepairReceipt(Model model) {
+		List<RepairReceipt> list=repairReceiptservice.showAllRepairReceipt();
+		if(list!=null) {
+			model.addAttribute("list", list);
+			return "ShowAllRepairReceipt";
+		}else {
+			model.addAttribute("msg", "很遗憾，查看所有回执信息失败！");
+		     // 返回到提示信息页面
+			return "message";
+		}
+	}
+	
+	/**
+	 * 查看所有的配件信息
+	 */
+	@Autowired
+	private PcPartsService pcPartsService;
+	@RequestMapping( "/showAllPcParts.action")
+	public String ShowAllPcParts(Model model) {
+		List<PcParts> list= pcPartsService.showAllPcParts();
+		if(list!=null) {
+			model.addAttribute("list", list);
+			return "ShowAllPcParts";
+		}else {
+			model.addAttribute("msg", "很遗憾，查看配件信息失败！");
 		     // 返回到提示信息页面
 			return "message";
 		}

@@ -1,6 +1,5 @@
 package jee.com.core.web.controller;
 
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,11 +17,6 @@ public class CommonOperateController {
 		// 依赖注入,注入operate服务的实现类
 		@Autowired
 		private FeedbackService service;
-		
-		@RequestMapping( "/showfeedback.action")
-		public List<Feedback> ShowFeedback() {
-			return service.findAllFeedback();
-		}
 		
 		/**
 		 * 创建新的反馈

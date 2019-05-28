@@ -43,4 +43,27 @@ public class AdminServiceImpl implements AdminService{
 		return -1;
 	}
 
+	@Override
+	public int ReviseAdmin(Admin po) {
+		try {
+			return dao.doUpdate(po);
+		} catch (Exception e) {
+			System.out.println("修改管理员出现异常。");
+			e.printStackTrace();
+		}
+		return -1;
+	}
+
+	@Override
+	public Admin findAdminById(Integer id) {
+		Admin vo=null;
+		try {
+			vo=dao.findById(id);
+		} catch (Exception e) {
+			System.out.println("AdminServiceImpl类的findAdminById()出现Exception!");
+			e.printStackTrace();
+		}
+		return vo;
+	}
+
 }

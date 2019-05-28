@@ -9,6 +9,13 @@
 	    where login_name = #{login_name}
     </select>
     
+    <!-- 查询用户 -->
+    <select id="findById" parameterType="Integer" resultType="User">
+	    select *
+	    from user
+	    where id = #{id}
+    </select>
+    
     <!-- 查询所有用户 -->
     <select id="findAll" resultType="User">
 	    select *
@@ -43,4 +50,21 @@
    		#{remark}
     	)
     </insert>
+    
+    <update id="doUpdate" parameterType="User">
+    update user set
+    	login_name = #{login_name},
+    	password = #{password},
+    	name = #{name},
+    	sex = #{sex},
+    	email = #{email},
+    	phone = #{phone},
+   		address = #{address},
+   		birthday = #{birthday},
+   		date = #{date},
+   		point = #{point},
+   		unit = #{unit},
+   		remark = #{remark}
+   	where id = #{id}
+    </update>
 </mapper>

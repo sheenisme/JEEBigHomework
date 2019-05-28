@@ -16,21 +16,25 @@ import jee.com.core.service.FeedbackService;
 public class FeedbackServiceImp implements FeedbackService {
 	//注入DAO
 	@Autowired
-	private FeedbackDAO feedbackdao;
-	
-	@Override
-	public List<Feedback> findAllFeedback() {
-		
-		return null;
-	}
+	private FeedbackDAO dao;
 
 	@Override
 	public int doCreateFeedback(Feedback feedback) {
 		try {
-			return feedbackdao.doCreate(feedback);
+			return dao.doCreate(feedback);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return -1;
+	}
+
+	@Override
+	public List<Feedback> showAllFeedback() {
+		try {
+			return dao.findAll();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

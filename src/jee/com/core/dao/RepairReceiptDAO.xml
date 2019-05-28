@@ -2,7 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="jee.com.core.dao.RepairReceiptDAO" >
-	
 	<!-- 添加维修回执单 -->
 	<insert id="doCreate" parameterType="RepairReceipt">
 	insert into repair_receipt (
@@ -23,4 +22,8 @@
 	,#{remark}
 	)
 	</insert>
+	
+	<select id="findAll" resultType="RepairReceipt">
+	select * from repair_receipt
+	</select>
 </mapper>

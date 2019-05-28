@@ -3,8 +3,9 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="jee.com.core.dao.PcPartsDAO" >
     <!-- 查询所有配件信息 -->
-    <select id="findAll" >
-    
+    <select id="findAll" resultType="PcParts">
+    select * 
+    	from pc_parts
     </select>
     
     <!-- 添加新的配件 -->

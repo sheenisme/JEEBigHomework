@@ -4,6 +4,6 @@ import java.util.List;
 import jee.com.core.po.RepairOrders;
 
 public interface RepairOrdersService {
-	List<RepairOrders> showAll();
+	List<RepairOrders> showAllRepairOrders();
 	public int createRepairOrders(RepairOrders po);
 }

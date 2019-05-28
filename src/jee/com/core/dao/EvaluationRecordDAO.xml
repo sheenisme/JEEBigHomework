@@ -20,4 +20,9 @@
 	,#{remark}
 	) 
 	</insert>
+	
+	<!-- 查看全部的评价记录  -->
+	<select id="findAll" resultType="EvaluationRecord">
+	select * from evaluation_record
+	</select>
 </mapper>

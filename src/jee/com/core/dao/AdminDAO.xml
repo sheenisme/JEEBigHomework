@@ -5,12 +5,18 @@
     <!-- 查询管理员 -->
     <select id="findByName" parameterType="String" resultType="Admin">
 	    select *
-	    from admins
-	    where login_name = #{login_name}
+	    	from admins
+	    	where login_name = #{login_name}
+    </select>
+    
+    <select id="findById" parameterType="Integer" resultType="Admin">
+	    select *
+	    	from admins
+	    		where id = #{id}
     </select>
     
     <!-- 创建管理员 -->
-    <insert id="doCreate">
+    <insert id="doCreate" parameterType="Admin">
     insert into admins(
     login_name
 	,password
@@ -38,5 +44,20 @@
     )
     </insert>
     
+    <update id="doUpdate" parameterType="Admin">
+    update admins set 
+    	login_name=#{login_name}   
+		,password=#{password}
+		,name=#{name}
+		,sex=#{sex}
+		,email=#{email}
+		,phone=#{phone}
+		,address=#{address}
+		,date=#{date}
+		,grade=#{grade}
+		,upper_id=#{upper_id}
+		,remark=#{remark}
+	where id = #{id}
+    </update>
     
 </mapper>

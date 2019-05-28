@@ -5,5 +5,5 @@ import jee.com.core.po.Feedback;
 
 public interface FeedbackService {
 	public int doCreateFeedback(Feedback feedback);
-	public List<Feedback> findAllFeedback();
+	public List<Feedback> showAllFeedback();
 }

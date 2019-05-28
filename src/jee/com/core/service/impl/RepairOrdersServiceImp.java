@@ -14,6 +14,7 @@ import jee.com.core.service.RepairOrdersService;
 public class RepairOrdersServiceImp implements RepairOrdersService{
 	@Autowired
 	private RepairOrdersDAO  dao;
+	
 	public int createRepairOrders(RepairOrders po) {
 		try {
 			return dao.doCreate(po);
@@ -23,8 +24,9 @@ public class RepairOrdersServiceImp implements RepairOrdersService{
 		}
 		return -1;
 	}
+	
 	@Override
-	public List<RepairOrders> showAll() {
+	public List<RepairOrders> showAllRepairOrders() {
 		try {
 			return dao.findAll();
 		} catch (Exception e) {
