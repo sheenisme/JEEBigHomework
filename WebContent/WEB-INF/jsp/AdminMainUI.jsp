@@ -90,7 +90,7 @@ body{
 			<li><a href="${pageContext.request.contextPath}/admin/showAllFeedback.action" target="rightFrame">查看反馈信息</a></li>
 			<li><a href="${pageContext.request.contextPath}/admin/showAllPcParts.action" target="rightFrame">查看配件信息</a></li>
 			<li><a href="${pageContext.request.contextPath}/admin/showAllUser.action" target="rightFrame">查看所有客户</a></li>
-			<li><a href="" target="rightFrame">查看统计信息</a></li>
+			<li><a href="${pageContext.request.contextPath}/message.jsp" target="rightFrame">查看统计信息</a></li>
 			<li><a href="${pageContext.request.contextPath}/RevisePcParts.jsp" target="rightFrame">修改配件信息</a></li>
 			<li><a href="${pageContext.request.contextPath}/admin/preReviseAdmin.action?id=<%=u.getId() %>" target="rightFrame">修改个人信息</a></li>
 			<li><a href="${pageContext.request.contextPath}/adminreg.jsp" target="rightFrame">申请下级管理员</a></li>

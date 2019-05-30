@@ -11,7 +11,7 @@
  Target Server Version : 80011
  File Encoding         : 65001
 
- Date: 29/05/2019 00:15:17
+ Date: 30/05/2019 16:16:24
 */
 
 SET NAMES utf8mb4;
@@ -58,7 +58,7 @@ CREATE TABLE `evaluation_record`  (
   `context` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   `remark` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   PRIMARY KEY (`evaluate_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of evaluation_record
@@ -66,6 +66,10 @@ CREATE TABLE `evaluation_record`  (
 INSERT INTO `evaluation_record` VALUES (5, '1000020190526111059253', 1, '2019-05-28 15:54:49', 4, '16851', '4849');
 INSERT INTO `evaluation_record` VALUES (6, '1000020190526105034157', 1, '2019-05-28 15:55:46', 5, 'fef', 'fege5gy6rj7t');
 INSERT INTO `evaluation_record` VALUES (7, '1000020190528235629875', 1, '2019-05-28 16:10:24', 5, 'fef', 'frhtjjuyu');
+INSERT INTO `evaluation_record` VALUES (8, '1000020190528232918477', 1, '2019-05-30 05:05:24', 4, '很棒', '加油');
+INSERT INTO `evaluation_record` VALUES (9, '1000020190530130511444', 11, '2019-05-31 00:00:00', 3, '传递', 'vvdf');
+INSERT INTO `evaluation_record` VALUES (10, '1000020190530132515444', 11, '2019-05-30 15:22:55', 5, '如果人多', '人多不');
+INSERT INTO `evaluation_record` VALUES (11, '1000020190530130511444', 11, '2019-05-30 07:32:47', 3, 'hdh', '');
 
 -- ----------------------------
 -- Table structure for feedback
@@ -78,7 +82,7 @@ CREATE TABLE `feedback`  (
   `theme` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of feedback
@@ -91,6 +95,7 @@ INSERT INTO `feedback` VALUES (5, '建议填写', 'd络您。', ' ', '请 写！
 INSERT INTO `feedback` VALUES (6, '建议填写', '建议填写，便于我们联络您。', '请认真填写！', '请详细填写！');
 INSERT INTO `feedback` VALUES (7, '建议填写', '建议填写，便于我们联络您。', '请认真填写！', '请详细填写！');
 INSERT INTO `feedback` VALUES (8, '建议填fef写', 'f，便于我们联络您。', 'f', 'f！');
+INSERT INTO `feedback` VALUES (9, '爱迪生', '6161658@qq.com', '统计信息！', '急需，请赶紧完善');
 
 -- ----------------------------
 -- Table structure for pc_parts
@@ -114,6 +119,7 @@ CREATE TABLE `pc_parts`  (
 -- ----------------------------
 INSERT INTO `pc_parts` VALUES (1, '给日本', '是', 'vdb', 65, 25, 5, 6, '444');
 INSERT INTO `pc_parts` VALUES (2, '鼠标', '夫人夫人', '割让给', 600, 80, 40, 100, '0');
+INSERT INTO `pc_parts` VALUES (3, '键盘', '硬件', '华硕', 100, 99, 20, 80, '牛逼');
 
 -- ----------------------------
 -- Table structure for repair_orders
@@ -135,14 +141,10 @@ CREATE TABLE `repair_orders`  (
 -- ----------------------------
 -- Records of repair_orders
 -- ----------------------------
-INSERT INTO `repair_orders` VALUES ('1000120190526104124758', 1, '2019-05-26 02:41:10', 'fesf', '4165', 'fses', '2019-05-31 02:41:17', 'fe', 'fse', 'sef');
-INSERT INTO `repair_orders` VALUES ('1000020190526105034157', 1, '2019-05-26 02:50:13', '分色法', '486165', '十分十分', '2019-05-03 02:50:26', '是v', '发', '分');
-INSERT INTO `repair_orders` VALUES ('1000020190526105304610', 1, '2019-05-26 02:52:49', '瑟夫', '发', '方式', '2019-05-28 02:52:55', '方式', '方式', '人');
-INSERT INTO `repair_orders` VALUES ('1000020190526105502461', 1, '2019-05-26 02:54:44', '分', '1865', '二分', '2019-05-28 02:54:52', '发', '个人', '给');
-INSERT INTO `repair_orders` VALUES ('1000020190526111059253', 1, '2019-05-26 03:10:37', 'efe', '15', 'fef', '2019-05-21 03:10:53', 'fes', 'sefe', 'se');
-INSERT INTO `repair_orders` VALUES ('1000020190528232918477', 1, '2019-05-28 15:29:05', '', 'cs', 'cs', '2019-05-14 15:29:13', 'scs', 'vs', 'vs');
-INSERT INTO `repair_orders` VALUES ('1000120190528233147375', 11, '2019-05-28 15:31:35', 'd', '1865', 'de', '2019-05-22 15:31:41', 'fe', 'fe', 'fef');
 INSERT INTO `repair_orders` VALUES ('1000020190528235629875', 1, '2019-05-28 15:56:10', '是个哈哈哈', '16896565', '恶风瑟瑟是给', '2019-05-16 15:56:22', '分工表', '分身乏术', '粉丝');
+INSERT INTO `repair_orders` VALUES ('1000020190530130511443', 1, '2019-05-30 05:03:42', '宋广辉', '15225158238', '莲花街100号', '2019-05-31 05:04:33', '硬件', '键盘失灵', '急');
+INSERT INTO `repair_orders` VALUES ('1000020190530130511444', 11, '2019-05-30 05:03:42', '宋广辉', '186165', '莲花街100号', '2019-05-30 00:00:00', '软件', '的', '测试');
+INSERT INTO `repair_orders` VALUES ('1000020190530132515444', 11, '2019-05-28 00:00:00', 'vfvf', '16156', '莲花街100号', '2019-05-31 00:00:00', 'vfd', 'vfb', 'vfb');
 
 -- ----------------------------
 -- Table structure for repair_receipt
@@ -166,11 +168,11 @@ CREATE TABLE `repair_receipt`  (
 -- ----------------------------
 INSERT INTO `repair_receipt` VALUES (1, '1000120190526104124758', 4, '2019-05-26 08:18:59', 0, '若未使用，可不填！', '', '', '');
 INSERT INTO `repair_receipt` VALUES (2, '1000020190526105034157', 4, '2019-05-26 08:19:04', 1, '若未使用，可不填！', 's', 'f', 'f');
-INSERT INTO `repair_receipt` VALUES (3, '1000020190526111059253', 4, '2019-05-26 08:47:03', 1, '413', 'vdv', 'VS发v', '重试');
-INSERT INTO `repair_receipt` VALUES (4, '1000120190528233147375', 2, '2019-05-27 07:11:29', 0, '若未使用，可不填！', '', '', '');
-INSERT INTO `repair_receipt` VALUES (5, '1000020190528235629875', 3, '2019-05-28 16:08:33', 1, 'grgrg', 'grgr', 'grdgd', 'gdrgdr');
 INSERT INTO `repair_receipt` VALUES (6, '1000120190528233147375', 3, '2019-05-28 16:08:52', 0, '若未使用，可不填！', 'g', 'g', 'g');
 INSERT INTO `repair_receipt` VALUES (7, '1000020190528232918477', 3, '2019-05-28 16:09:02', 1, 'gjyju', 'ghth', 'grgdg', 'grgrg');
+INSERT INTO `repair_receipt` VALUES (8, '1000020190530130511443', 0, '2019-05-30 05:17:47', 1, '键盘', '更换', '远离水', '啊');
+INSERT INTO `repair_receipt` VALUES (9, '1000020190530132515444', 4, '2019-05-30 15:23:24', 0, '0', '0', '0', '0');
+INSERT INTO `repair_receipt` VALUES (10, '1000020190530130511444', 3, '2019-05-30 15:23:48', 1, '11', '11', '1', '1');
 
 -- ----------------------------
 -- Table structure for user
@@ -196,9 +198,10 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'sheen', '123456', 'sgh', '男', '48646@qq.com', '168516531', 'sffrsfrsfrs', '2019-05-05 00:00:00', '2019-05-19 15:39:04', 10, '唯e', '老板');
+INSERT INTO `user` VALUES (1, 'sheen', '123456', 'sgh', '男', '48646@qq.com', '168516531', 'Lianhuajie', '2019-05-04 00:00:00', '2019-05-19 15:39:04', 10, '唯e', '老板');
 INSERT INTO `user` VALUES (9, 'sgh', '123456', '杨晨', '男', 'ycc@qq.com', '1522254685', 'frrfrfr', '2019-05-04 00:00:00', '2019-05-21 11:49:00', 10, 'hthfth', '0');
 INSERT INTO `user` VALUES (10, 'ycc', '123456', '杨晨', '男', 'ycc@qq.com', '1522254685', 'frrfrfr', '2019-04-25 00:00:00', '2019-05-21 11:52:09', 10, 'haut', '老板娘');
 INSERT INTO `user` VALUES (11, 'root', '123456', '宋广辉', '男', '71710898@qq.com', '152555484', 'frff', '2015-05-04 00:00:00', '2019-05-21 11:57:11', 10, 'ffr', 'f');
+INSERT INTO `user` VALUES (12, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;

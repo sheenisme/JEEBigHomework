@@ -87,7 +87,7 @@ body{
 			<li><a href="${pageContext.request.contextPath}/user/showEvaluationRecord.action?id=<%=u.getId() %>" target="rightFrame">查看我的评价</a></li>
 			<li><a href="${pageContext.request.contextPath}/user/showAllRepairOrders.action" target="rightFrame">查看所有维修</a></li>
 			<li><a href="${pageContext.request.contextPath}/user/showAllEvaluationRecord.action" target="rightFrame">查看所有评价</a></Li>
-			<li><a href="" target="rightFrame">查看统计信息</a></li>
+			<li><a href="${pageContext.request.contextPath}/message.jsp" target="rightFrame">查看统计信息</a></li>
 			<li><a href="${pageContext.request.contextPath}/user/showAllPcParts.action" target="rightFrame">查看配件信息</a></li>
 			<li><a href="${pageContext.request.contextPath}/user/preReviseUser.action?id=<%=u.getId() %>" target="rightFrame">修改个人信息</a></li>
 		</ul>

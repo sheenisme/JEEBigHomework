@@ -113,7 +113,7 @@ public class UserController {
 	}
 	
 	/**
-	 * 修改管理员信息
+	 * 修改用户信息
 	 */
 	@RequestMapping(value = "/reviseUser.action")
 	public String ReviseUser(User user,Model model,HttpServletResponse response) {
@@ -162,7 +162,6 @@ public class UserController {
 	    	model.addAttribute("msg", "恭喜您，您的维修订单已提交！");
 	         // 返回到提示信息页面
 			return "message";
-
 	    }else{
 	    	model.addAttribute("msg", "很遗憾，您的订单提交失败，请核对您输入的数据后重试！");
 	         // 返回到提示信息页面
