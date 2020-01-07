@@ -51,7 +51,7 @@ function checkemail(){
 }
 
 function checkregister(){
-	var name=document.getElementById("name");
+	var name=document.getElementById("login_name");
 	var password=document.getElementById("password");
 	var repck=document.getElementById("repck");
 	var email=document.getElementById("email");

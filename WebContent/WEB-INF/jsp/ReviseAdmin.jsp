@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>jee 客户服务系统</title>
+	<title>唯e数码  客户服务系统</title>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/rform.css" />
 	<script language="javascript" type="text/javascript" src="${pageContext.request.contextPath}/js/WdatePicker.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/Check.js">
@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div class="container">
-		<p class="title">jee 客户服务系统</p>
+		<p class="title">唯e数码  客户服务系统</p>
 		<div class="box">
 				<div id="register_box">
 					<h2>修改管理员信息页面</h2>
@@ -54,12 +54,12 @@
 					</form>	
 				</div>
 				<br>
-				<div><pre>jee 客户服务系统 - 修改管理员信息页面！</pre></div> 
+				<div><pre>唯e数码  客户服务系统 - 修改管理员信息页面！</pre></div> 
 		</div>
 	</div>
 	<br><br>
 	<p class="foot">
-		© jee NetClient v1.1.1
+		© 唯e数码  NetClient v1.1.1
 		<br>
 	</p>
 </body>

@@ -104,7 +104,7 @@ body{
 
 <div id="foot" align="center" class="container">
 	<p align="center"> 
-		© jee NetClient v1.1.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系统当前时间为：<%=new java.sql.Timestamp(System.currentTimeMillis()).toString().substring(0,19) %>
+		© 唯e数码  NetClient v1.1.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系统当前时间为：<%=new java.sql.Timestamp(System.currentTimeMillis()).toString().substring(0,19) %>
 	<br>
 	</p>
 </div>

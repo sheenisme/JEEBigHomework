@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>jee 服务系统</title>
+	<title>唯e数码  服务系统</title>
 	<link rel="stylesheet" href="./css/rform.css" />
 	<script language="javascript" type="text/javascript" src="./js/WdatePicker.js"></script>
 	<script type="text/javascript" src="js/Check.js">
@@ -11,14 +11,14 @@
 </head>
 <body>
 	<div class="container">
-		<p class="title">jee服务系统</p>
+		<p class="title">唯e数码   服务系统</p>
 		<div class="box">
 				<div id="user">
 					<h2>注册页面</h2>
 					<form action="${pageContext.request.contextPath}/user/register.action" method="post" name="user" onsubmit="return checkregister()">
 						<input type="hidden" name="action" value="CustomRegister">
 						<div class="ui register">
-						账&nbsp;&nbsp;&nbsp;&nbsp;号:&nbsp;<input id="name" type="text" name="loginname"><br>
+						账&nbsp;&nbsp;&nbsp;&nbsp;号:&nbsp;<input id="login_name" type="text" name="login_name"><br>
 						</div>
 						<div class="ui register">
 						密&nbsp;&nbsp;&nbsp;&nbsp;码:&nbsp;<input id="password" type="password" name="password"><br>
@@ -58,12 +58,12 @@
 					</form>	
 				</div>
 				<br>
-				<div><pre>jee 服务系统 - 注册账户页面！<%=new java.sql.Timestamp(System.currentTimeMillis()).toString().substring(0,19) %></pre></div> 
+				<div><pre>唯e数码  服务系统 - 注册账户页面！<%=new java.sql.Timestamp(System.currentTimeMillis()).toString().substring(0,19) %></pre></div> 
 		</div>
 	</div>
 	<br><br>
 	<p class="foot">
-		© jee NetClient v1.1.1
+		© 唯e数码  NetClient v1.1.1
 		<br>
 	</p>
 </body>

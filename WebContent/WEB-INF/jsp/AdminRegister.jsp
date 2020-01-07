@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>jee 服务系统</title>
+	<title>唯e数码  服务系统</title>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/rform.css" />
 	<script language="javascript" type="text/javascript" src="${pageContext.request.contextPath}/js/WdatePicker.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/Check.js">
@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class="container">
-		<p class="title">jee 服务系统</p>
+		<p class="title">唯e数码  服务系统</p>
 		<div class="box">
 				<div id="register_box">
 					<h2>注册管理员页面</h2>
@@ -57,12 +57,12 @@
 					</form>	
 				</div>
 				<br>
-				<div><pre>jee 服务系统 - 注册管理员页面！</pre></div> 
+				<div><pre>唯e数码  服务系统 - 注册管理员页面！</pre></div> 
 		</div>
 	</div>
 	<br><br>
 	<p class="foot">
-		© jee NetClient v1.1.1
+		© 唯e数码  NetClient v1.1.1
 		<br>
 	</p>
 </body>

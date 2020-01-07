@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Jee 服务系统</title>
+	<title>唯e数码  服务系统</title>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/Check.js">
 	</script>
@@ -24,7 +24,7 @@ if(cookies!=null){
 }
 %>
 	<div class="container">
-		<p class="title">jee 服务系统</p>
+		<p class="title">唯e数码  服务系统</p>
 		<div class="box">
 			<div id="login_box">
 			<h2>管理员登录页面</h2>
@@ -52,14 +52,14 @@ if(cookies!=null){
 			</div>
 			<br>
 			<div>
-				<pre>jee 服务系统-管理员登录页面!    <a href="${pageContext.request.contextPath}/foundmm.jsp">找回密码</a></pre>
+				<pre>唯e数码  服务系统-管理员登录页面!    <a href="${pageContext.request.contextPath}/foundmm.jsp">找回密码</a></pre>
 			</div> 
 		</div>
 	</div>
 	<br>
 	<br>
 	<p class="foot">
-		© jee NetClient v1.1.1
+		© 唯e数码  NetClient v1.1.1
 		<br>
 	</p>
 </body>

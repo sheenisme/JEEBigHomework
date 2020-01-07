@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>jee 服务系统</title>
+	<title>唯e数码  服务系统</title>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/form.css" />
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/Check.js">
 	</script>
@@ -23,7 +23,7 @@ if(cookies!=null){
 }
 %>
 	<div class="container">
-		<p class="title">jee 服务系统</p>
+		<p class="title">唯e数码  服务系统</p>
 		<div class="box">
 				<div id="login_box">
 						<h2>登录页面</h2>
@@ -52,12 +52,12 @@ if(cookies!=null){
 						</form>	
 				</div>
 				<br>
-				<div><pre>jee 服务系统-登录页面!&nbsp;&nbsp;&nbsp;<a href="foundmm.jsp">找回密码</a></pre></div> 
+				<div><pre>唯e数码  服务系统-登录页面!&nbsp;&nbsp;&nbsp;<a href="foundmm.jsp">找回密码</a></pre></div> 
 		</div>
 	</div>
 	<br>
 	<p class="foot">
-		© jee NetClient v1.1.1
+		© 唯e数码  NetClient v1.1.1
 		<br>
 	</p>
 </body>

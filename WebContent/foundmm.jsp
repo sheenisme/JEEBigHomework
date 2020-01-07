@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="container">
-		<p class="title">jee 客户服务系统</p>
+		<p class="title">唯e数码  客户服务系统</p>
 		<div class="box">
 				<div id="register_box">
 						<h2>找回密码页面</h2>
@@ -25,12 +25,12 @@
 						</form>	
 				</div>
 				<br>
-				<div><pre>Jee服务系统  - 找回密码页面！</pre></div> 
+				<div><pre>唯e数码 服务系统  - 找回密码页面！</pre></div> 
 		</div>
 	</div>
 	<br><br>
 	<p class="foot">
-		© jee NetClient v1.1.1
+		© 唯e数码  NetClient v1.1.1
 		<br>
 	</p>
 </body>
